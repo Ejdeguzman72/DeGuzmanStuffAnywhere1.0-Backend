@@ -17,9 +17,10 @@ import com.DeGuzmanFamilyAPI.DeGuzmanFamilyAPIBackend.exception.ResourceNotFound
 import com.DeGuzmanFamilyAPI.DeGuzmanFamilyAPIBackend.logger.MedicalTrxLogger;
 import com.DeGuzmanFamilyAPI.DeGuzmanFamilyAPIBackend.message.LoggerMessage;
 import com.DeGuzmanFamilyAPI.DeGuzmanFamilyAPIBackend.repository.MedicalTransactionRepository;
+import com.DeGuzmanFamilyAPI.DeGuzmanFamilyAPIBackend.service_interface.MedicalTransactionInterface;
 
 @Service
-public class MedicalTransactionService {
+public class MedicalTransactionService implements MedicalTransactionInterface {
 
 	@Autowired
 	private MedicalTransactionRepository medicalTransactionRepository;
@@ -37,7 +38,7 @@ public class MedicalTransactionService {
 	}
 	
 	// based on the pathvariable thrown, this returns the Medical Transaction object that has the corresponding ID
-	public ResponseEntity<MedicalTransaction> findMedicalTransactionInformationbyId(@PathVariable Long medicalTransactionId) throws ResourceNotFoundException {
+	public ResponseEntity<MedicalTransaction> findMedicalTransactionInformationById(@PathVariable Long medicalTransactionId) throws ResourceNotFoundException {
 		MedicalTransaction medicalTransaction = medicalTransactionRepository.findById(medicalTransactionId)
 				.orElseThrow(() -> new ResourceNotFoundException("Not Found"));
 		if (medicalTransactionId == null || medicalTransactionId == 0) {
@@ -87,7 +88,7 @@ public class MedicalTransactionService {
 		return ResponseEntity.ok().body(updatedMedicalTransaction);
 	}
 	
-	public Map<String,Boolean> deleteMedicalTransactionInformation(@PathVariable Long medicalTransactionId) {
+	public Map<String,Boolean> deleteMedicalTraansactionInformation(@PathVariable Long medicalTransactionId) {
 		medicalTransactionRepository.deleteById(medicalTransactionId);
 		if (medicalTransactionId == null || medicalTransactionId == 0) {
 			MedicalTrxLogger.medicalTrxLogger.warning(LoggerMessage.DELETE_MEDICAL_TRX_ERROR_MESSAGE);
@@ -98,5 +99,10 @@ public class MedicalTransactionService {
 		Map<String,Boolean> response = new HashMap<>();
 		response.put("Medical Transaction deleted", Boolean.TRUE);
 		return response;
+	}
+
+	@Override
+	public long getCountOfMedicalTransactions() {
+		return medicalTransactionRepository.count();
 	}
 }

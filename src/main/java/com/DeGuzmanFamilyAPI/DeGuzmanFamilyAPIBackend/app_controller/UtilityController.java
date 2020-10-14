@@ -54,4 +54,9 @@ public class UtilityController {
 	public Map<String,Boolean> deleteUtilityInformation(@PathVariable long utilityid) {
 		return utilityService.deleteUtilityInformation(utilityid);
 	}
+	
+	@GetMapping("/count-of-utility")
+	public long getCountOfUtilityInformation() {
+		return utilityService.findUtilityCount();
+	}
 }

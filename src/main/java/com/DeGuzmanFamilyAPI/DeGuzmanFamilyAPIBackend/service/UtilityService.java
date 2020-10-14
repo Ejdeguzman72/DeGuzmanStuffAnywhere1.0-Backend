@@ -15,9 +15,10 @@ import org.springframework.web.bind.annotation.RequestBody;
 import com.DeGuzmanFamilyAPI.DeGuzmanFamilyAPIBackend.app_models.Utility;
 import com.DeGuzmanFamilyAPI.DeGuzmanFamilyAPIBackend.exception.ResourceNotFoundException;
 import com.DeGuzmanFamilyAPI.DeGuzmanFamilyAPIBackend.repository.UtilityRepository;
+import com.DeGuzmanFamilyAPI.DeGuzmanFamilyAPIBackend.service_interface.UtilityServiceInterface;
 
 @Service
-public class UtilityService {
+public class UtilityService implements UtilityServiceInterface {
 
 	@Autowired
 	private UtilityRepository utilityRepository;
@@ -26,7 +27,7 @@ public class UtilityService {
 		return utilityRepository.findAll();
 	}
 	
-	public ResponseEntity<Utility> findUtilityInformationById(@PathVariable long utilityid) throws ResourceNotFoundException {
+	public ResponseEntity<Utility> findUtilityInformationById(@PathVariable Long utilityid) throws ResourceNotFoundException {
 		Utility utility = utilityRepository.findById(utilityid).
 				orElseThrow(() -> new ResourceNotFoundException("not found"));
 		return ResponseEntity.ok().body(utility);
@@ -61,4 +62,10 @@ public class UtilityService {
 		response.put("deleted", Boolean.TRUE);
 		return response;
 	}
+
+	@Override
+	public long findUtilityCount() {
+		return utilityRepository.count();
+	}
+	
 }

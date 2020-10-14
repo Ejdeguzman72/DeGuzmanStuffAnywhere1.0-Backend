@@ -17,9 +17,10 @@ import com.DeGuzmanFamilyAPI.DeGuzmanFamilyAPIBackend.exception.ResourceNotFound
 import com.DeGuzmanFamilyAPI.DeGuzmanFamilyAPIBackend.logger.AutoTrxLogger;
 import com.DeGuzmanFamilyAPI.DeGuzmanFamilyAPIBackend.message.LoggerMessage;
 import com.DeGuzmanFamilyAPI.DeGuzmanFamilyAPIBackend.repository.AutoTransactionRepository;
+import com.DeGuzmanFamilyAPI.DeGuzmanFamilyAPIBackend.service_interface.AutoTransactionInterface;
 
 @Service
-public class AutoTransactionService {
+public class AutoTransactionService implements AutoTransactionInterface {
 
 	@Autowired
 	private AutoTransactionRepository autoTransactionRepository;
@@ -37,7 +38,7 @@ public class AutoTransactionService {
 	}
 	
 	// based on the pathvariable thrown, this returns the AutoTransaction object that has the corresponding ID
-	public ResponseEntity<AutoTransaction> findAutoTransactionInformationById(@PathVariable Long autoTransactionId) throws ResourceNotFoundException {
+	public ResponseEntity<AutoTransaction> findAutoTranasctionInformationById(@PathVariable Long autoTransactionId) throws ResourceNotFoundException {
 		AutoTransaction autoTransactions = autoTransactionRepository.findById(autoTransactionId)
 				.orElseThrow(() -> new ResourceNotFoundException("Not Found"));
 		if (autoTransactionId == null || autoTransactionId <= 0) {
@@ -62,7 +63,7 @@ public class AutoTransactionService {
 	
 	// updates the AutoTransaction based on the id number entered. Once the fields are updated, then a new Auto
 	// Transaction object is created.
-	public ResponseEntity<AutoTransaction> updateAutoTransactionInformation(@PathVariable Long autoTransactionId,
+	public ResponseEntity<AutoTransaction> updateTransactionInformation(@PathVariable Long autoTransactionId,
 			@Valid @RequestBody AutoTransaction autoTransactionDetails) {
 		AutoTransaction autoTransaction = null;
 		try {
@@ -98,5 +99,10 @@ public class AutoTransactionService {
 		Map<String,Boolean> response = new HashMap<>();
 		response.put("deleted",Boolean.TRUE);
 		return response;
+	}
+
+	@Override
+	public long getCountOfAutoTransactions() {
+		return autoTransactionRepository.count();
 	}
 }

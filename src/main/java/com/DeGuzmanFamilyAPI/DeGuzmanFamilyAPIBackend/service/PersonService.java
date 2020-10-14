@@ -110,4 +110,9 @@ public class PersonService {
 		response.put("deleted", Boolean.TRUE);
 		return response;
 	}
+	
+	// returns the count of person information  that is stored
+	public long getCountOfPersonInformation() {
+		return personRepository.count();
+	}
 }

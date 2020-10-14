@@ -1,12 +1,10 @@
 package com.DeGuzmanFamilyAPI.DeGuzmanFamilyAPIBackend.app_models;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.EntityListeners;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
@@ -23,6 +21,7 @@ public class Users {
 	public String username;
 	public String password;
 	public String name;
+	public String email;
 	public int user_status;
 	public int roleid;
 	
@@ -70,6 +69,8 @@ public class Users {
 	public void setUser_status(int user_status) {
 		this.user_status = user_status;
 	}
+	
+	
 //	public UserPerson getUserPerson() {
 //		return userPerson;
 //	}
@@ -77,10 +78,18 @@ public class Users {
 //		this.userPerson = userPerson;
 //	}
 	
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
+		result = prime * result + ((email == null) ? 0 : email.hashCode());
 		result = prime * result + ((name == null) ? 0 : name.hashCode());
 		result = prime * result + ((password == null) ? 0 : password.hashCode());
 		result = prime * result + roleid;
@@ -89,6 +98,7 @@ public class Users {
 		result = prime * result + ((username == null) ? 0 : username.hashCode());
 		return result;
 	}
+	
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -98,6 +108,11 @@ public class Users {
 		if (getClass() != obj.getClass())
 			return false;
 		Users other = (Users) obj;
+		if (email == null) {
+			if (other.email != null)
+				return false;
+		} else if (!email.equals(other.email))
+			return false;
 		if (name == null) {
 			if (other.name != null)
 				return false;
@@ -122,35 +137,26 @@ public class Users {
 		return true;
 	}
 	
-	
-	
 	@Override
 	public String toString() {
 		return "Users [userid=" + userid + ", username=" + username + ", password=" + password + ", name=" + name
-				+ ", user_status=" + user_status + ", roleid=" + roleid + "]";
+				+ ", email=" + email + ", user_status=" + user_status + ", roleid=" + roleid + "]";
 	}
 	
-	
-	public Users(long userid, String username, String password, String name, int user_status, int roleid) {
+	public Users(long userid, String username, String password, String name, String email, int user_status,
+			int roleid) {
 		super();
 		this.userid = userid;
 		this.username = username;
 		this.password = password;
 		this.name = name;
+		this.email = email;
 		this.user_status = user_status;
 		this.roleid = roleid;
 	}
 	
 	public Users() {
-		
-	}
-	
-	Object object;
-	
-	public Users(String username, String password, Object object) {
 		super();
-		this.username = username;
-		this.password = password;
-		this.object = object;
+		// TODO Auto-generated constructor stub
 	}
 }

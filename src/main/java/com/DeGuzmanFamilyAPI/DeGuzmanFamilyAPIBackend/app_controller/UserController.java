@@ -65,4 +65,10 @@ public class UserController {
 	public Map<String,Boolean> deleteUser(@PathVariable Long userid) {
 		return userService.deleteUser(userid);
 	}
+	
+	@CrossOrigin
+	@DeleteMapping("delete-all")
+	public Map<String,Boolean>deleteAllUsers() {
+		return userService.deleteAllUsers();
+	}
 }

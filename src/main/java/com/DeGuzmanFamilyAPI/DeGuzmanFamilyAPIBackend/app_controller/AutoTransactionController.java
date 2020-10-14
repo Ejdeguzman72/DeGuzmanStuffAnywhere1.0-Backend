@@ -38,7 +38,7 @@ public class AutoTransactionController {
 	
 	@GetMapping("/auto-transaction/{autoTransactionId}")
 	public ResponseEntity<AutoTransaction> getAutoTransactionInformationById(@PathVariable Long autoTransactionId) throws ResourceNotFoundException {
-		return autoTransactionService.findAutoTransactionInformationById(autoTransactionId);
+		return autoTransactionService.findAutoTranasctionInformationById(autoTransactionId);
 	}
 	
 	@PostMapping("/add-auto-transaction-information")
@@ -50,12 +50,18 @@ public class AutoTransactionController {
 	@PutMapping("/update-auto-transaction/{autoTransactionId}")
 	public ResponseEntity<AutoTransaction> updateAutoTransactionInformationController(@PathVariable Long autoTransactionId,
 			@Valid @RequestBody AutoTransaction autoTransactionDetails) {
-		return autoTransactionService.updateAutoTransactionInformation(autoTransactionId, autoTransactionDetails);
+		return autoTransactionService.updateTransactionInformation(autoTransactionId, autoTransactionDetails);
 	}
 	
 	@CrossOrigin
 	@DeleteMapping("/auto-transaction/{autoTransactionId}")
 	public Map<String,Boolean> deleteAutoTransactionInformationController(@PathVariable Long autoTransactionId) {
 		return autoTransactionService.deleteAutoTransactionInformation(autoTransactionId);
+	}
+	
+	@CrossOrigin
+	@GetMapping("/count")
+	public long getCountOfAutoTransactions() {
+		return autoTransactionService.getCountOfAutoTransactions();
 	}
 }

@@ -59,4 +59,9 @@ public class PersonController {
 	public Map<String,Boolean> deletePersonInformation(@PathVariable Long personid) throws SecurityException, IOException {
 		return personService.deletePersonInformation(personid);
 	}
+	
+	@GetMapping("/count")
+	public long getCountOfPersonInformation() {
+		return personService.getCountOfPersonInformation();
+	}
 }

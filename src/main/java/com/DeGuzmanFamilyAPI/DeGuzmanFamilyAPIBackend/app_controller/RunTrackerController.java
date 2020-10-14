@@ -54,4 +54,10 @@ public class RunTrackerController {
 	public Map<String,Boolean> deleteRunTrackerInfoController(@PathVariable long runid) {
 		return runTrackerService.deleteRunTrackerInformation(runid);
 	}
+	
+	@CrossOrigin
+	@GetMapping("/run-count")
+	public long getCountOfRunTrackerInformation() {
+		return runTrackerService.findCountOfRunTrackerInformation();
+	}
 }

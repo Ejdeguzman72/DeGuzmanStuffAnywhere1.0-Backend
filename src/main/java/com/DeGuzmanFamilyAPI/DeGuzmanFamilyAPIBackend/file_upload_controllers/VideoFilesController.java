@@ -19,7 +19,6 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.method.annotation.MvcUriComponentsBuilder;
 
 import com.DeGuzmanFamilyAPI.DeGuzmanFamilyAPIBackend.file_upload_models.PhotosFileInfo;
-import com.DeGuzmanFamilyAPI.DeGuzmanFamilyAPIBackend.file_upload_service.PhotoFilesStorageService;
 import com.DeGuzmanFamilyAPI.DeGuzmanFamilyAPIBackend.file_upload_service.VideoFilesStorageService;
 import com.DeGuzmanFamilyAPI.DeGuzmanFamilyAPIBackend.message.ResponseMessage;
 

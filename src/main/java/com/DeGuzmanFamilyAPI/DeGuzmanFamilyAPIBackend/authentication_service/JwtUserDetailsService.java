@@ -1,8 +1,10 @@
 package com.DeGuzmanFamilyAPI.DeGuzmanFamilyAPIBackend.authentication_service;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -30,18 +32,28 @@ public class JwtUserDetailsService implements UserDetailsService {
 		if (user == null) {
 			throw new UsernameNotFoundException("User not found with username: " + username);
 		}
-		return new org.springframework.security.core.userdetails.User(user.getUsername(), user.getPassword(), new ArrayList<>());
+		User activeUser = new org.springframework.security.core.userdetails.User(user.getUsername(), user.getPassword(), new ArrayList<>());
+		
+		System.out.println(activeUser.getUsername() + ": " + "this is the current logged in user");
+		
+		return activeUser;
+	}
+	
+	public Users checkingLoggingInUser(String username) {
+		Users userLoggingIn = userRepository.findUserByUsername(username);
+		return userLoggingIn;
 	}
 	
 	
 	public Users save(Users user) {
 		Users newUser = new Users();
-		UserDetails userExists = null;
-		if (userExists == loadUserByUsername(user.getUsername())) {
-			System.out.println("yo this person is here already");
+		List<Users> userList = userRepository.findAll();
+		newUser.setUsername(user.getUsername());
+		
+		for (Users username : userList) {
+			System.out.println(username);
 		}
 		
-		newUser.setUsername(user.getUsername());
 		newUser.setPassword(bcryptEncoder.encode(user.getPassword()));
 		newUser.setRoleid(RoleValues.DEGUZMANSTUFFANYWHERE_BASIC_USER);
 		newUser.setUser_status(UserStatusValues.DEGUZMANSTUFFANYWHERE_PENDING);

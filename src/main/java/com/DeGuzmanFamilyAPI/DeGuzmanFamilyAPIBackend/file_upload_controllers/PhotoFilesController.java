@@ -18,7 +18,6 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.method.annotation.MvcUriComponentsBuilder;
 
-import com.DeGuzmanFamilyAPI.DeGuzmanFamilyAPIBackend.file_upload_models.AutoTransactionFileInfo;
 import com.DeGuzmanFamilyAPI.DeGuzmanFamilyAPIBackend.file_upload_models.PhotosFileInfo;
 import com.DeGuzmanFamilyAPI.DeGuzmanFamilyAPIBackend.file_upload_service.PhotoFilesStorageService;
 import com.DeGuzmanFamilyAPI.DeGuzmanFamilyAPIBackend.message.ResponseMessage;

@@ -17,7 +17,7 @@ public class MedicalTransaction {
 
 	public Long medicalTransactionId;
 	public String facillity;
-	public Date medicalTransactionDate;
+	public String medicalTransactionDate;
 	public double amount;
 	public String person;
 	
@@ -35,10 +35,10 @@ public class MedicalTransaction {
 	public void setFacillity(String facillity) {
 		this.facillity = facillity;
 	}
-	public Date getMedicalTransactionDate() {
+	public String getMedicalTransactionDate() {
 		return medicalTransactionDate;
 	}
-	public void setMedicalTransactionDate(Date medicalTransactionDate) {
+	public void setMedicalTransactionDate(String medicalTransactionDate) {
 		this.medicalTransactionDate = medicalTransactionDate;
 	}
 	public double getAmount() {
@@ -105,7 +105,7 @@ public class MedicalTransaction {
 				+ ", medicalTransactionDate=" + medicalTransactionDate + ", amount=" + amount + ", person=" + person
 				+ "]";
 	}
-	public MedicalTransaction(Long medicalTransactionId, String facillity, Date medicalTransactionDate, double amount,
+	public MedicalTransaction(Long medicalTransactionId, String facillity, String medicalTransactionDate, double amount,
 			String person) {
 		super();
 		this.medicalTransactionId = medicalTransactionId;

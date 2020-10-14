@@ -17,9 +17,10 @@ import com.DeGuzmanFamilyAPI.DeGuzmanFamilyAPIBackend.exception.ResourceNotFound
 import com.DeGuzmanFamilyAPI.DeGuzmanFamilyAPIBackend.logger.GeneralTrxLogger;
 import com.DeGuzmanFamilyAPI.DeGuzmanFamilyAPIBackend.message.LoggerMessage;
 import com.DeGuzmanFamilyAPI.DeGuzmanFamilyAPIBackend.repository.TransactionRepository;
+import com.DeGuzmanFamilyAPI.DeGuzmanFamilyAPIBackend.service_interface.GeneralTransactionInterface;
 
 @Service
-public class TransactionService {
+public class TransactionService implements GeneralTransactionInterface {
 
 	@Autowired
 	private TransactionRepository transactionRepository;
@@ -102,4 +103,10 @@ public class TransactionService {
 		response.put("deleted", Boolean.TRUE);
 		return response;
 	}
+
+	@Override
+	public long findCountOfGeneralTransaction() {
+		return transactionRepository.count();
+	}
+	
 }

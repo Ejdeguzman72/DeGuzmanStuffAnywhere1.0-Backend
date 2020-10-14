@@ -15,11 +15,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.DeGuzmanFamilyAPI.DeGuzmanFamilyAPIBackend.Lookup_Values.UserStatusValues;
 import com.DeGuzmanFamilyAPI.DeGuzmanFamilyAPIBackend.app_models.Users;
 import com.DeGuzmanFamilyAPI.DeGuzmanFamilyAPIBackend.authentication_config.JwtTokenUtil;
 import com.DeGuzmanFamilyAPI.DeGuzmanFamilyAPIBackend.authentication_models.JwtRequest;
 import com.DeGuzmanFamilyAPI.DeGuzmanFamilyAPIBackend.authentication_models.JwtResponse;
 import com.DeGuzmanFamilyAPI.DeGuzmanFamilyAPIBackend.authentication_service.JwtUserDetailsService;
+import com.DeGuzmanFamilyAPI.DeGuzmanFamilyAPIBackend.exception.UserStatusDeletedException;
+import com.DeGuzmanFamilyAPI.DeGuzmanFamilyAPIBackend.exception.UserStatusPendingException;
 
 @RestController
 @CrossOrigin
@@ -41,15 +44,26 @@ public class JwtAuthenticationController {
 
 		final UserDetails userDetails = jwtUserDetailsService.loadUserByUsername(authenticationRequest.getUsername());
 		
-		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+		Users user = jwtUserDetailsService.checkingLoggingInUser(authenticationRequest.getUsername());
 		
-		String currentLoggedInUser = authentication.getPrincipal().toString();
+		System.out.println(user.username + " " + "is logging in!");
 		
-		System.out.println("Current Logged In User: " + currentLoggedInUser);
+		String token = "";
 		
-		final String token = jwtTokenUtil.generateToken(userDetails);
-		
-		System.out.println(token);
+		if (user.user_status == UserStatusValues.DEGUZMANSTUFFANYWHERE_ACCEPTED) {
+			token = jwtTokenUtil.generateToken(userDetails);
+		} else if (user.user_status == UserStatusValues.DEGUZMANSTUFFANYWHERE_PENDING) {
+			token = "";
+			if (token == "")  {
+				throw new UserStatusPendingException("The user status is pending");
+			}
+		} else {
+			token = "";
+			
+			if (token == " ") {
+				throw new UserStatusDeletedException("The user status is deleted");
+			}
+		}
 
 		return ResponseEntity.ok(new JwtResponse(token));
 	}

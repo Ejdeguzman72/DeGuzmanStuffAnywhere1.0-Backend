@@ -1,5 +1,6 @@
 package com.DeGuzmanFamilyAPI.DeGuzmanFamilyAPIBackend.service;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -69,5 +70,19 @@ public class UserService {
 		Map<String,Boolean> response = new HashMap<>();
 		response.put("deleted",Boolean.TRUE);
 		return response;
+	}
+	
+	public Map<String,Boolean> deleteAllUsers() {
+		List<Users> listOfUsers = new ArrayList<>();
+		userRepository.deleteAll();
+		Map<String,Boolean> responseMap = new HashMap<>();
+		
+		if (listOfUsers.size() == 0) {
+			responseMap.put("Deleted",Boolean.TRUE);
+		} else {
+			responseMap.put("User were not deleted. Please check again", Boolean.FALSE);
+		}
+		
+		return responseMap;
 	}
 }

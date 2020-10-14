@@ -38,7 +38,7 @@ public class MedicalTransactionController {
 	
 	@GetMapping("/medical-transaction/{medicalTransactionId}")
 	public ResponseEntity<MedicalTransaction> getMedicalTransactionInformationById(@PathVariable Long medicalTranscationId) throws ResourceNotFoundException {
-		return medicalTransactionService.findMedicalTransactionInformationbyId(medicalTranscationId);
+		return medicalTransactionService.findMedicalTransactionInformationById(medicalTranscationId);
 	}
 	
 	@PostMapping("/add-medical-transaction")
@@ -56,6 +56,12 @@ public class MedicalTransactionController {
 	@CrossOrigin
 	@DeleteMapping("/medical-transaction/{medicalTransactionId")
 	public Map<String,Boolean> deleteMedicalTransactionInfoController(@PathVariable Long medicalTransactionId) {
-		return medicalTransactionService.deleteMedicalTransactionInformation(medicalTransactionId);
+		return medicalTransactionService.deleteMedicalTraansactionInformation(medicalTransactionId);
+	}
+	
+	@CrossOrigin
+	@GetMapping("/count-of-medical-transactions")
+	public long getCountOfMedicalTransactions() {
+		return medicalTransactionService.getCountOfMedicalTransactions();
 	}
 }

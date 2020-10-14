@@ -15,9 +15,10 @@ import org.springframework.web.bind.annotation.RequestBody;
 import com.DeGuzmanFamilyAPI.DeGuzmanFamilyAPIBackend.app_models.RunTracker;
 import com.DeGuzmanFamilyAPI.DeGuzmanFamilyAPIBackend.exception.ResourceNotFoundException;
 import com.DeGuzmanFamilyAPI.DeGuzmanFamilyAPIBackend.repository.RunTrackerRepository;
+import com.DeGuzmanFamilyAPI.DeGuzmanFamilyAPIBackend.service_interface.RunTrackerServiceInterface;
 
 @Service
-public class RunTrackerService {
+public class RunTrackerService implements RunTrackerServiceInterface {
 
 	@Autowired
 	private RunTrackerRepository runTrackerRepository;
@@ -60,5 +61,10 @@ public class RunTrackerService {
 		Map<String,Boolean> response =  new HashMap<>();
 		response.put("deleted", Boolean.TRUE);
 		return response;
+	}
+
+	@Override
+	public long findCountOfRunTrackerInformation() {
+		return runTrackerRepository.count();
 	}
 }

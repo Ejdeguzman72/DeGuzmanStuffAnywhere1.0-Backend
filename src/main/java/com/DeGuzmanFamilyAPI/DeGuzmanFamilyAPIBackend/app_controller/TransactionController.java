@@ -58,4 +58,10 @@ public class TransactionController {
 	public Map<String,Boolean> deleteTransactionInformation(@PathVariable Long transactionId) {
 		return transactionService.deleteTransactionInformation(transactionId);
 	}
+	
+	@CrossOrigin
+	@GetMapping("/general-transaction-count")
+	public long getCountOfGeneralTransaction() {
+		return transactionService.findCountOfGeneralTransaction();
+	}
 }
