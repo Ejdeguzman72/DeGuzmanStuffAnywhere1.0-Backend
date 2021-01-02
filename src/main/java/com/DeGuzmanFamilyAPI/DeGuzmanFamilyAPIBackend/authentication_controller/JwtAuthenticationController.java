@@ -1,5 +1,7 @@
 package com.DeGuzmanFamilyAPI.DeGuzmanFamilyAPIBackend.authentication_controller;
 
+import java.util.Date;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -23,6 +25,7 @@ import com.DeGuzmanFamilyAPI.DeGuzmanFamilyAPIBackend.authentication_models.JwtR
 import com.DeGuzmanFamilyAPI.DeGuzmanFamilyAPIBackend.authentication_service.JwtUserDetailsService;
 import com.DeGuzmanFamilyAPI.DeGuzmanFamilyAPIBackend.exception.UserStatusDeletedException;
 import com.DeGuzmanFamilyAPI.DeGuzmanFamilyAPIBackend.exception.UserStatusPendingException;
+import com.DeGuzmanFamilyAPI.DeGuzmanFamilyAPIBackend.logger.AuthenticationLogger;
 
 @RestController
 @CrossOrigin
@@ -36,6 +39,9 @@ public class JwtAuthenticationController {
 	
 	@Autowired
 	private JwtUserDetailsService jwtUserDetailsService;
+	
+	Date date = new Date();
+	
 	
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
 	public ResponseEntity<?> createAuthenticationToken(@RequestBody JwtRequest authenticationRequest) throws Exception {
@@ -51,16 +57,23 @@ public class JwtAuthenticationController {
 		String token = "";
 		
 		if (user.user_status == UserStatusValues.DEGUZMANSTUFFANYWHERE_ACCEPTED) {
+			
 			token = jwtTokenUtil.generateToken(userDetails);
+			AuthenticationLogger.authenticationLogger.info("Authenticating User: " + user);
+	
 		} else if (user.user_status == UserStatusValues.DEGUZMANSTUFFANYWHERE_PENDING) {
+		
 			token = "";
 			if (token == "")  {
+				AuthenticationLogger.authenticationLogger.info("Cannot authenticate user: " + user);
 				throw new UserStatusPendingException("The user status is pending");
 			}
+			
 		} else {
 			token = "";
 			
 			if (token == " ") {
+				AuthenticationLogger.authenticationLogger.info("Cannot authenticate user.email Please check whether user is enabled or exists");
 				throw new UserStatusDeletedException("The user status is deleted");
 			}
 		}
@@ -82,6 +95,8 @@ public class JwtAuthenticationController {
 			System.out.println(authenticatingUser.getPassword() + "this is the user");
 			
 			authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(username, password));
+			
+			AuthenticationLogger.authenticationLogger.info("User: " + authenticatingUser.getUsername() + " " + "has logged in at " + date);
 		} catch (DisabledException e) {
 			throw new Exception("USER_DISABLED", e);
 		} catch (BadCredentialsException e) {

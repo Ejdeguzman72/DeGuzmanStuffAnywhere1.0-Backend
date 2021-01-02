@@ -16,11 +16,15 @@ import com.DeGuzmanFamilyAPI.DeGuzmanFamilyAPIBackend.file_upload_service.Genera
 import com.DeGuzmanFamilyAPI.DeGuzmanFamilyAPIBackend.file_upload_service.MedicalTransactionFilesStorageService;
 import com.DeGuzmanFamilyAPI.DeGuzmanFamilyAPIBackend.file_upload_service.PhotoFilesStorageService;
 import com.DeGuzmanFamilyAPI.DeGuzmanFamilyAPIBackend.file_upload_service.VideoFilesStorageService;
+import com.DeGuzmanFamilyAPI.DeGuzmanFamilyAPIBackend.logger.AuthenticationLogger;
 import com.DeGuzmanFamilyAPI.DeGuzmanFamilyAPIBackend.logger.AutoTrxLogger;
+import com.DeGuzmanFamilyAPI.DeGuzmanFamilyAPIBackend.logger.CarInfoLogger;
 import com.DeGuzmanFamilyAPI.DeGuzmanFamilyAPIBackend.logger.ExternalFileLogger;
 import com.DeGuzmanFamilyAPI.DeGuzmanFamilyAPIBackend.logger.GeneralTrxLogger;
 import com.DeGuzmanFamilyAPI.DeGuzmanFamilyAPIBackend.logger.MedicalTrxLogger;
 import com.DeGuzmanFamilyAPI.DeGuzmanFamilyAPIBackend.logger.PersonInfoLogger;
+import com.DeGuzmanFamilyAPI.DeGuzmanFamilyAPIBackend.logger.RestaurantInfoLogger;
+import com.DeGuzmanFamilyAPI.DeGuzmanFamilyAPIBackend.logger.UtilityInfoLogger;
 
 @SpringBootApplication
 public class DeGuzmanFamilyApiBackendApplication implements CommandLineRunner {
@@ -46,7 +50,13 @@ public class DeGuzmanFamilyApiBackendApplication implements CommandLineRunner {
 		
 		System.out.println("You are using port: " + port);
 		
+		AuthenticationLogger.createLog();
+		
 		AutoTrxLogger.createLog();
+		
+		CarInfoLogger.createLog();
+		
+		ExternalFileLogger.createLog();
 		
 		GeneralTrxLogger.createLog();
 		
@@ -54,7 +64,10 @@ public class DeGuzmanFamilyApiBackendApplication implements CommandLineRunner {
 		
 		PersonInfoLogger.createLog();
 		
-		ExternalFileLogger.createLog();
+		RestaurantInfoLogger.createLog();
+		
+		UtilityInfoLogger.createLog();
+		
 	}
 	
     @Bean

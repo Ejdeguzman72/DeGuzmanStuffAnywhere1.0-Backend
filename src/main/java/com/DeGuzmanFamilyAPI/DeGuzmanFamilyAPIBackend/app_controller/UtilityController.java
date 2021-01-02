@@ -18,8 +18,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.DeGuzmanFamilyAPI.DeGuzmanFamilyAPIBackend.app_models.Utility;
+import com.DeGuzmanFamilyAPI.DeGuzmanFamilyAPIBackend.app_service.UtilityService;
 import com.DeGuzmanFamilyAPI.DeGuzmanFamilyAPIBackend.exception.ResourceNotFoundException;
-import com.DeGuzmanFamilyAPI.DeGuzmanFamilyAPIBackend.service.UtilityService;
 
 @RestController
 @RequestMapping("app/utility-information")

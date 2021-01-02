@@ -1,4 +1,4 @@
-package com.DeGuzmanFamilyAPI.DeGuzmanFamilyAPIBackend.service;
+package com.DeGuzmanFamilyAPI.DeGuzmanFamilyAPIBackend.app_service;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -15,9 +15,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 
 import com.DeGuzmanFamilyAPI.DeGuzmanFamilyAPIBackend.app_models.Users;
+import com.DeGuzmanFamilyAPI.DeGuzmanFamilyAPIBackend.app_repository.UserRepository;
 import com.DeGuzmanFamilyAPI.DeGuzmanFamilyAPIBackend.exception.ResourceNotFoundException;
 import com.DeGuzmanFamilyAPI.DeGuzmanFamilyAPIBackend.logger.MasterLogger;
-import com.DeGuzmanFamilyAPI.DeGuzmanFamilyAPIBackend.repository.UserRepository;
 
 @Service
 public class UserService {

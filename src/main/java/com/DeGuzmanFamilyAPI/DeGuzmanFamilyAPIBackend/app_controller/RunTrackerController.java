@@ -18,8 +18,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.DeGuzmanFamilyAPI.DeGuzmanFamilyAPIBackend.app_models.RunTracker;
+import com.DeGuzmanFamilyAPI.DeGuzmanFamilyAPIBackend.app_service.RunTrackerService;
 import com.DeGuzmanFamilyAPI.DeGuzmanFamilyAPIBackend.exception.ResourceNotFoundException;
-import com.DeGuzmanFamilyAPI.DeGuzmanFamilyAPIBackend.service.RunTrackerService;
 
 @RestController
 @RequestMapping("/app/run-tracker-app")

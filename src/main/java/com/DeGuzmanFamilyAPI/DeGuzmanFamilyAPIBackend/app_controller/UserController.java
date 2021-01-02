@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.DeGuzmanFamilyAPI.DeGuzmanFamilyAPIBackend.app_models.Users;
-import com.DeGuzmanFamilyAPI.DeGuzmanFamilyAPIBackend.service.UserService;
+import com.DeGuzmanFamilyAPI.DeGuzmanFamilyAPIBackend.app_service.UserService;
 
 @RestController
 @CrossOrigin

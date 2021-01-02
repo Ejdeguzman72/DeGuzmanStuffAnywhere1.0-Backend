@@ -1,4 +1,4 @@
-package com.DeGuzmanFamilyAPI.DeGuzmanFamilyAPIBackend.service;
+package com.DeGuzmanFamilyAPI.DeGuzmanFamilyAPIBackend.app_service;
 
 import java.util.HashMap;
 import java.util.List;
@@ -13,9 +13,10 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 
 import com.DeGuzmanFamilyAPI.DeGuzmanFamilyAPIBackend.app_models.RunTracker;
+import com.DeGuzmanFamilyAPI.DeGuzmanFamilyAPIBackend.app_repository.RunTrackerRepository;
+import com.DeGuzmanFamilyAPI.DeGuzmanFamilyAPIBackend.app_service_interface.RunTrackerServiceInterface;
 import com.DeGuzmanFamilyAPI.DeGuzmanFamilyAPIBackend.exception.ResourceNotFoundException;
-import com.DeGuzmanFamilyAPI.DeGuzmanFamilyAPIBackend.repository.RunTrackerRepository;
-import com.DeGuzmanFamilyAPI.DeGuzmanFamilyAPIBackend.service_interface.RunTrackerServiceInterface;
+import com.DeGuzmanFamilyAPI.DeGuzmanFamilyAPIBackend.logger.RunTrackerLogger;
 
 @Service
 public class RunTrackerService implements RunTrackerServiceInterface {
@@ -24,10 +25,23 @@ public class RunTrackerService implements RunTrackerServiceInterface {
 	private RunTrackerRepository runTrackerRepository;
 	
 	public List<RunTracker> findAllRunTrackerInformation() {
+		
+		List<RunTracker> list = findAllRunTrackerInformation();
+		
+		if (list.size() == 0 || list.isEmpty()) {
+			RunTrackerLogger.runTrackerLogger.warning("Run Tracker List is Empty: " + list);
+		} else {
+			RunTrackerLogger.runTrackerLogger.info("Run Tracker List Count: " + list.size());
+		}
 		return runTrackerRepository.findAll();
 	}
 	
 	public ResponseEntity<RunTracker> findRunTrackerInformationById(@PathVariable long runid) throws ResourceNotFoundException {
+		if (runid == 0) {
+			RunTrackerLogger.runTrackerLogger.warning("Run Tracker ID Number is invalid");
+		} else {
+			RunTrackerLogger.runTrackerLogger.info("Retrieved ID Number " + runid);
+		}
 		RunTracker runTracker = runTrackerRepository.findById(runid)
 				.orElseThrow(() -> new ResourceNotFoundException("Not Found"));
 		return ResponseEntity.ok().body(runTracker);

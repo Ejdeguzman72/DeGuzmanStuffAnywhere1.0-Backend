@@ -1,4 +1,4 @@
-package com.DeGuzmanFamilyAPI.DeGuzmanFamilyAPIBackend.repository;
+package com.DeGuzmanFamilyAPI.DeGuzmanFamilyAPIBackend.app_repository;
 
 import java.util.List;
 

@@ -19,8 +19,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.DeGuzmanFamilyAPI.DeGuzmanFamilyAPIBackend.app_models.MedicalTransaction;
+import com.DeGuzmanFamilyAPI.DeGuzmanFamilyAPIBackend.app_service.MedicalTransactionService;
 import com.DeGuzmanFamilyAPI.DeGuzmanFamilyAPIBackend.exception.ResourceNotFoundException;
-import com.DeGuzmanFamilyAPI.DeGuzmanFamilyAPIBackend.service.MedicalTransactionService;
 
 @RestController
 @RequestMapping("/app/medical-transactions")

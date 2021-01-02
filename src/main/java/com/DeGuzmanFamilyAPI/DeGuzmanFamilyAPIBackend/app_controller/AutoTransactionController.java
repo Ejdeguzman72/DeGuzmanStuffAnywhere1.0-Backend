@@ -19,8 +19,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.DeGuzmanFamilyAPI.DeGuzmanFamilyAPIBackend.app_models.AutoTransaction;
+import com.DeGuzmanFamilyAPI.DeGuzmanFamilyAPIBackend.app_service.AutoTransactionService;
 import com.DeGuzmanFamilyAPI.DeGuzmanFamilyAPIBackend.exception.ResourceNotFoundException;
-import com.DeGuzmanFamilyAPI.DeGuzmanFamilyAPIBackend.service.AutoTransactionService;
 
 @RestController
 @RequestMapping("/app/auto-transactions")

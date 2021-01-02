@@ -1,4 +1,4 @@
-package com.DeGuzmanFamilyAPI.DeGuzmanFamilyAPIBackend.service;
+package com.DeGuzmanFamilyAPI.DeGuzmanFamilyAPIBackend.app_service;
 
 import java.util.HashMap;
 import java.util.List;
@@ -13,9 +13,10 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 
 import com.DeGuzmanFamilyAPI.DeGuzmanFamilyAPIBackend.app_models.Utility;
+import com.DeGuzmanFamilyAPI.DeGuzmanFamilyAPIBackend.app_repository.UtilityRepository;
+import com.DeGuzmanFamilyAPI.DeGuzmanFamilyAPIBackend.app_service_interface.UtilityServiceInterface;
 import com.DeGuzmanFamilyAPI.DeGuzmanFamilyAPIBackend.exception.ResourceNotFoundException;
-import com.DeGuzmanFamilyAPI.DeGuzmanFamilyAPIBackend.repository.UtilityRepository;
-import com.DeGuzmanFamilyAPI.DeGuzmanFamilyAPIBackend.service_interface.UtilityServiceInterface;
+import com.DeGuzmanFamilyAPI.DeGuzmanFamilyAPIBackend.logger.UtilityInfoLogger;
 
 @Service
 public class UtilityService implements UtilityServiceInterface {
@@ -24,16 +25,44 @@ public class UtilityService implements UtilityServiceInterface {
 	private UtilityRepository utilityRepository;
 	
 	public List<Utility> findAllUtilityInformation() {
+		
+		List<Utility> list = utilityRepository.findAll();
+		
+		if (list.size() == 0 || list.isEmpty()) {
+			UtilityInfoLogger.utilityInfoLogger.warning("Utility List is empty: " + list.size());
+		} else {
+			UtilityInfoLogger.utilityInfoLogger.info("Restaurant List: " + list.size());
+		}
+		
 		return utilityRepository.findAll();
 	}
 	
 	public ResponseEntity<Utility> findUtilityInformationById(@PathVariable Long utilityid) throws ResourceNotFoundException {
+		
 		Utility utility = utilityRepository.findById(utilityid).
 				orElseThrow(() -> new ResourceNotFoundException("not found"));
+		
+		if (utility == null || utilityid == 0) {
+			UtilityInfoLogger.utilityInfoLogger.warning("Cannot search invalid criteria!");
+		} else {
+			UtilityInfoLogger.utilityInfoLogger.info("Utility info has been retrieved for ID " + utilityid);
+		}
+		
 		return ResponseEntity.ok().body(utility);
 	}
 	
 	public Utility addUtilityInformation(@Valid @RequestBody Utility utility) {
+		if (utility.dueDate == null || utility.dueDate == "") {
+			UtilityInfoLogger.utilityInfoLogger.warning("Utility due date is null");
+		} else if (utility.name == null || utility.name == "") {
+			UtilityInfoLogger.utilityInfoLogger.warning("Utility name is null");
+		} else if (utility.phone == "" || utility.phone == null) {
+			UtilityInfoLogger.utilityInfoLogger.warning("Utility phone is null");
+		} else if (utility.url == "" || utility.url == null) {
+			UtilityInfoLogger.utilityInfoLogger.warning("Utility url is null");
+		} else {
+			UtilityInfoLogger.utilityInfoLogger.info("Utility Information has been added: " + utility.name);
+		}
 		return utilityRepository.save(utility);
 	}
 	
@@ -51,12 +80,18 @@ public class UtilityService implements UtilityServiceInterface {
 			e.printStackTrace();
 			System.out.println(e);
 		}
+		UtilityInfoLogger.utilityInfoLogger.info("Utility Information has been updated : " + utility.name);
 		final Utility updatedUtility = utilityRepository.save(utility);
 		return ResponseEntity.ok().body(updatedUtility);
 		
 	}
 	
 	public Map<String,Boolean> deleteUtilityInformation(@PathVariable long utilityid) {
+		if (utilityid == 0) {
+			UtilityInfoLogger.utilityInfoLogger.warning("Utility Information with ID Number: " + utilityid + " "  + "is invalid");
+		} else {
+			UtilityInfoLogger.utilityInfoLogger.info("Utility Information with ID Number: " + utilityid + " " + "has been deleted");
+		}
 		utilityRepository.deleteById(utilityid);
 		Map<String, Boolean> response = new HashMap<>();
 		response.put("deleted", Boolean.TRUE);

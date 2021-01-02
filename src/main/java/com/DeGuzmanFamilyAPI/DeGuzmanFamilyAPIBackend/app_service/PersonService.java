@@ -1,4 +1,4 @@
-package com.DeGuzmanFamilyAPI.DeGuzmanFamilyAPIBackend.service;
+package com.DeGuzmanFamilyAPI.DeGuzmanFamilyAPIBackend.app_service;
 
 import java.io.IOException;
 import java.util.HashMap;
@@ -14,10 +14,10 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 
 import com.DeGuzmanFamilyAPI.DeGuzmanFamilyAPIBackend.app_models.Person;
+import com.DeGuzmanFamilyAPI.DeGuzmanFamilyAPIBackend.app_repository.PersonRepository;
 import com.DeGuzmanFamilyAPI.DeGuzmanFamilyAPIBackend.exception.ResourceNotFoundException;
 import com.DeGuzmanFamilyAPI.DeGuzmanFamilyAPIBackend.logger.PersonInfoLogger;
 import com.DeGuzmanFamilyAPI.DeGuzmanFamilyAPIBackend.message.LoggerMessage;
-import com.DeGuzmanFamilyAPI.DeGuzmanFamilyAPIBackend.repository.PersonRepository;
 
 @Service
 public class PersonService {
