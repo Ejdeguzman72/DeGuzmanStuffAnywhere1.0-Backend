@@ -1,0 +1,1 @@
+insert into USER_STATUS(DESCR) values ('ENABLED'),('PENDING'),('DISABLED');

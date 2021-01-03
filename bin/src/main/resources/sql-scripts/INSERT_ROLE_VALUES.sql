@@ -1,0 +1,1 @@
+insert into role(descr) values ('admin'),('users');
