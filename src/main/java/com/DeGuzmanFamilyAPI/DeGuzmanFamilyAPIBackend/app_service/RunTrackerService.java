@@ -48,6 +48,20 @@ public class RunTrackerService implements RunTrackerServiceInterface {
 	}
 	
 	public RunTracker addRunTrackerInformation(@Valid @RequestBody RunTracker runTracker) {
+		
+		if (runTracker.firstname == "" || runTracker.firstname == null) {
+			RunTrackerLogger.runTrackerLogger.info("First name cannot be null");
+		} else if (runTracker.lastname == "" || runTracker.lastname == null) {
+			RunTrackerLogger.runTrackerLogger.warning("Last Name cannot be null");
+		} else if (runTracker.runDate == null) {
+			RunTrackerLogger.runTrackerLogger.warning("Run date cannot be null");
+		} else if (runTracker.runDistance == 0) {
+			RunTrackerLogger.runTrackerLogger.warning("Run Tracker distance cannot be null");
+		} else if (runTracker.runTime == "" || runTracker.runTime == null) {
+			RunTrackerLogger.runTrackerLogger.warning("Run time cannot be null");
+		} else {
+			RunTrackerLogger.runTrackerLogger.info("Added Run Tracker Information for " + runTracker.firstname + " " + runTracker.lastname);
+		}
 		return runTrackerRepository.save(runTracker);
 	}
 	
@@ -67,10 +81,16 @@ public class RunTrackerService implements RunTrackerServiceInterface {
 			e.printStackTrace();
 		}
 		final RunTracker updatedRunTrackerDetails = runTrackerRepository.save(runTracker);
+		RunTrackerLogger.runTrackerLogger.info("Run Information has been updated for runid " + runid);
 		return ResponseEntity.ok().body(updatedRunTrackerDetails);
 	}
 	
 	public Map<String,Boolean> deleteRunTrackerInformation(@PathVariable long runid) {
+		if (runid == 0) {
+			RunTrackerLogger.runTrackerLogger.warning("Run ID Number is null/invalid");
+		} else {
+			RunTrackerLogger.runTrackerLogger.info("Run Tracker with ID Number " + runid + " has been deleted");
+		}
 		runTrackerRepository.deleteById(runid);
 		Map<String,Boolean> response =  new HashMap<>();
 		response.put("deleted", Boolean.TRUE);
