@@ -13,12 +13,12 @@ public class CarInfoLogger {
 	
 	public final static Logger carInfoLogger = Logger.getLogger(ClassName.class.getName(), null);
 	
-	public final static String path = "C:\\EJ-Projects\\Web-Applications\\DeGUzmanFamilyAPI-Backend\\log\\car-info-logs\\car-info.log";
+	public final static String path = ".\\logs\\car-info-logs\\car-info.log";
 	
 	public static FileHandler carInfoFileHandler;
 	
 	public static void createLog() throws SecurityException, IOException {
-		File logDirectory = new File("C:\\\\EJ-Projects\\\\Web-Applications\\\\DeGUzmanFamilyAPI-Backend\\\\log\\\\car-info-logs");
+		File logDirectory = new File(".\\logs\\car-info-logs");
 		
 		if (!logDirectory.exists()) {
 			logDirectory.mkdirs();

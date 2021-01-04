@@ -13,12 +13,12 @@ public class AutoTrxLogger {
 	
 	public final static Logger autoTrxLogger = Logger.getLogger(ClassName.class.getName());
 	
-	public final static String path = "C:\\EJ-Projects\\DeGUzmanFamilyAPI-Backend\\log\\auto-transaction-logs\\auto-transaction.log";
+	public final static String path = ".\\logs\\auto-transaction-logs\\auto-transaction.log";
 	
 	public static FileHandler autoTrxHandler;
 	
 	public static void createLog() throws SecurityException, IOException {
-		File logDirectory = new File("C:\\EJ-Projects\\DeGuzmanFamilyAPI-Backend\\log\\auto-transaction-logs");
+		File logDirectory = new File(".\\logs\\auto-transaction-logs");
 		if(!logDirectory.exists()) {
 			logDirectory.mkdirs();
 			System.out.println("created directory" + " " + logDirectory);

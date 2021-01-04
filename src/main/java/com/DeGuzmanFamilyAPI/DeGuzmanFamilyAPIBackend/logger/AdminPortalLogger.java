@@ -13,13 +13,13 @@ public class AdminPortalLogger {
 	
 	public final static Logger adminPortalLogger = Logger.getLogger(ClassName.class.getName());
 	
-	public final static String path = "C:\\EJ-Projects\\DeGuzmanFamilyAPI-Backend\\log\\admin-portal-logs\\admin-portal.log";
+	public final static String path = ".\\logs\\admin-portal-logs\\admin-portal.log";
 	
 	static FileHandler adminPortalFileHandler;
 	
 	public static void createLog() throws SecurityException, IOException {
 		
-		File logDirectory = new File("C:\\\\EJ-Projects\\\\DeGuzmanFamilyAPI-Backend\\\\log\\\\admin-portal-logs");
+		File logDirectory = new File(".\\logs\\admin-portal-logs");
 		
 		if (!logDirectory.exists()) {
 			logDirectory.mkdirs();

@@ -14,11 +14,11 @@ public class RunTrackerLogger {
 	
 	public static FileHandler runTrackerFileHandler;
 	
-	public static String path = "C:\\EJ-Projects\\DeGuzmanFamilyAPI-Backend\\log\\run-tracker-logs\\run-tracker.log";
+	public static String path = ".\\logs\\run-tracker-logs\\run-tracker.log";
 	
 	public static void createLog() {
 		
-		File runTrackerDirectory = new File("C:\\EJ-Projects\\DeGuzmanFamilyAPI-Backend\\log\\run-tracker-logs");
+		File runTrackerDirectory = new File(".\\logs\\run-tracker-logs");
 		
 		if(!runTrackerDirectory.exists()) {
 			runTrackerDirectory.mkdirs();

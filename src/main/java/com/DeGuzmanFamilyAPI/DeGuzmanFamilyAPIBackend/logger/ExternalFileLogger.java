@@ -15,10 +15,10 @@ public class ExternalFileLogger {
 	
 	public static FileHandler externalFileFileHandler;
 	
-	public static String path = "C:\\EJ-Projects\\DeGuzmanFamilyAPI-Backend\\log\\external-file-logs\\external-file.log";
+	public static String path = ".\\logs\\external-file-logs\\external-file.log";
 	
 	public static void createLog() throws SecurityException, IOException {
-		File logDirectory = new File("./log/external-file-logs");
+		File logDirectory = new File(".\\logs\\external-file-logs");
 		if (!logDirectory.exists()) {
 			logDirectory.mkdirs();
 			System.out.println("created directory " + logDirectory);

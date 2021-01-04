@@ -14,7 +14,7 @@ public class RestaurantInfoLogger {
 	
 	public final static Logger restaurantLogger = Logger.getLogger(ClassName.class.getTypeName());
 	
-	public final static String path = "C:\\EJ-Projects\\Web-Applications\\DeGUzmanFamilyAPI-Backend\\log\\restaurant-info-logs\\restaurant-info.log";
+	public final static String path = ".\\logs\\restaurant-info-logs\\restaurant-info.log";
 	
 	public static FileHandler restaurantFileHandler;
 	

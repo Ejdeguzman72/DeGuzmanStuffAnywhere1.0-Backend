@@ -14,13 +14,13 @@ public class GeneralTrxLogger {
 	
 	public final static Logger generalTrxLogger = Logger.getLogger(ClassName.class.getName());
 	
-	public final static String path = "C:\\EJ-Projects\\DeGUzmanFamilyAPI-Backend\\log\\general-transaction-logs\\general-transaction.log";
+	public final static String path = ".\\logs\\general-transaction-logs\\general-transaction.log";
 	
 	static FileHandler generalTrxFileHandler = null;
 	
 	public static void createLog() throws SecurityException, IOException {
 		
-		File logDirectory = new File("C:\\EJ-Projects\\DeGUzmanFamilyAPI-Backend\\log\\general-transaction-logs");
+		File logDirectory = new File(".\\logs\\general-transaction-logs");
 		
 		if(!logDirectory.exists()) {
 			

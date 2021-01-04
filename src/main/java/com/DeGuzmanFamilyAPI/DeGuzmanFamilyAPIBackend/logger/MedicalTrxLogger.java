@@ -15,10 +15,10 @@ public class MedicalTrxLogger {
 	
 	public static FileHandler medicalTrxFileHandler;
 	
-	public static String path = "C:\\EJ-Projects\\DeGUzmanFamilyAPI-Backend\\log\\medical-transaction-logs\\medical-transaction.log";
+	public static String path = ".\\logs\\medical-transaction-logs\\medical-transaction.log";
 	
 	public static void createLog() throws SecurityException, IOException {
-		File logDirectory = new File("./log/medical-transaction-logs");
+		File logDirectory = new File(".\\log\\medical-transaction-logs");
 		if(!logDirectory.exists()) {
 			logDirectory.mkdirs();
 			System.out.println("created directory" + " " + logDirectory);

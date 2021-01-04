@@ -13,13 +13,13 @@ public class UtilityInfoLogger {
 	
 	public final static Logger utilityInfoLogger = Logger.getLogger(ClassName.class.getName(),null);
 	
-	public final static String path = "C:\\EJ-Projects\\Web-Applications\\DeGUzmanFamilyAPI-Backend\\log\\utility-logs\\utility-info.log";
+	public final static String path = ".\\logs\\utility-logs\\utility-info.log";
 	
 	public static FileHandler utilityFileHandler;
 	
 	public static void createLog() throws SecurityException, IOException {
 		
-		File utilityDirectory = new File("C:\\EJ-Projects\\Web-Applications\\DeGUzmanFamilyAPI-Backend\\log\\utility-logs");
+		File utilityDirectory = new File(".\\logs\\utility-logs");
 		
 		if (!utilityDirectory.exists()) {
 			utilityDirectory.mkdirs();

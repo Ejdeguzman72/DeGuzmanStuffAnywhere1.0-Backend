@@ -13,14 +13,14 @@ public class MasterLogger {
 	public final static Logger masterLogger = Logger.getLogger(ClassName.class.getName());
 	
 	public void createLog() throws SecurityException, IOException  {
-		File masterLogDirectory = new File("C:\\\\EJ-Projects\\\\DeGuzmanFamilyAPI-Backend\\\\log");
+		File masterLogDirectory = new File(".\\logs\\master");
 		if(!masterLogDirectory.exists()) {
 			masterLogDirectory.mkdirs();
 			System.out.println("Created directory" + " " + masterLogDirectory);  
 		}
 		
 		FileHandler masterLoggerHandler;
-		String path = "C:\\EJ-Projects\\DeGUzmanFamilyAPI-Backend\\log\\master-logger.log";
+		String path = ".\\log\\master\\master-logger.log";
 		masterLoggerHandler = new FileHandler(path,append);
 		masterLogger.addHandler(masterLoggerHandler);
 	}
