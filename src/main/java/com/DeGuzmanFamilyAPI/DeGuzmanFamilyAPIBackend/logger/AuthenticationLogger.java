@@ -9,11 +9,13 @@ import javassist.bytecode.stackmap.TypeData.ClassName;
 
 public class AuthenticationLogger {
 
-	static boolean append = true;
+	public static boolean append = true;
 	
 	public final static Logger authenticationLogger = Logger.getLogger(ClassName.class.getName());
 	
-	public final static String path = ".\\logs\\authentication-logs\\authentication.log";
+	public final static String file = ".\\logs\\authentication-logs\\authentication.log";
+	
+	public final static String path = ".\\logs\\authentication-logs";
 	
 	public static FileHandler authenticationHandler;
 	
@@ -25,7 +27,7 @@ public class AuthenticationLogger {
 			System.out.println("Created directory " + logDirectory);
 		}
 		
-		authenticationHandler = new FileHandler(path,append);
+		authenticationHandler = new FileHandler(file, append);
 		
 		authenticationLogger.addHandler(authenticationHandler);
 		

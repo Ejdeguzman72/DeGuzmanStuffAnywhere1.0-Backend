@@ -9,7 +9,7 @@ import javassist.bytecode.stackmap.TypeData.ClassName;
 
 public class CarInfoLogger {
 
-	static boolean append = true;
+	public static boolean append = true;
 	
 	public final static Logger carInfoLogger = Logger.getLogger(ClassName.class.getName(), null);
 	
@@ -18,10 +18,10 @@ public class CarInfoLogger {
 	public static FileHandler carInfoFileHandler;
 	
 	public static void createLog() throws SecurityException, IOException {
-		File logDirectory = new File(".\\logs\\car-info-logs");
+		File logDirectory = new File(path);
 		
 		if (!logDirectory.exists()) {
-			logDirectory.mkdirs();
+			logDirectory.mkdir();
 			System.out.println("Created directory: " + logDirectory);
 		}
 		

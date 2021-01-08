@@ -18,7 +18,7 @@ public class MedicalTrxLogger {
 	public static String path = ".\\logs\\medical-transaction-logs\\medical-transaction.log";
 	
 	public static void createLog() throws SecurityException, IOException {
-		File logDirectory = new File(".\\log\\medical-transaction-logs");
+		File logDirectory = new File(path);
 		if(!logDirectory.exists()) {
 			logDirectory.mkdirs();
 			System.out.println("created directory" + " " + logDirectory);
@@ -26,6 +26,6 @@ public class MedicalTrxLogger {
 		medicalTrxFileHandler = new FileHandler(path,append);
 		medicalTrxLogger.addHandler(medicalTrxFileHandler);
 		
-		System.out.println("Created directory " + logDirectory);
+//		System.out.println("Created directory " + logDirectory);
 	}
 }

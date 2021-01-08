@@ -7,29 +7,28 @@ import java.util.logging.Logger;
 
 import javassist.bytecode.stackmap.TypeData.ClassName;
 
-public class AdminPortalLogger {
+public class BooksLogger {
 
 	public static boolean append = true;
 	
-	public final static Logger adminPortalLogger = Logger.getLogger(ClassName.class.getName());
+	public static String path = ".//logs//books";
 	
-	public final static String path = ".\\logs\\admin-portal-logs\\admin-portal.log";
+	public static String file = ".//logs//books//book-logger.txt";
 	
-	public static FileHandler adminPortalFileHandler;
+	public static Logger booksLogger = Logger.getLogger(ClassName.class.getName());
+	
+	public static FileHandler booksFileHandler;
 	
 	public static void createLog() throws SecurityException, IOException {
-		
 		File logDirectory = new File(path);
 		
 		if (!logDirectory.exists()) {
 			logDirectory.mkdirs();
-			System.out.println("Created log directory " + " " + logDirectory);
+			System.out.println("Created Directory " + logDirectory);
 		}
 		
-		adminPortalFileHandler = new FileHandler(path,append);
+		booksFileHandler = new FileHandler(file,append);
 		
-		adminPortalLogger.addHandler(adminPortalFileHandler);
-		
+		booksLogger.addHandler(booksFileHandler);
 	}
-	
 }

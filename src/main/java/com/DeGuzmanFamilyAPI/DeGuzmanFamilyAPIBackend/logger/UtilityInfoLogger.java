@@ -13,13 +13,15 @@ public class UtilityInfoLogger {
 	
 	public final static Logger utilityInfoLogger = Logger.getLogger(ClassName.class.getName(),null);
 	
-	public final static String path = ".\\logs\\utility-logs\\utility-info.log";
+	public final static String file = ".\\logs\\utility-logs\\utility-info.log";
+	
+	public final static String path = ".\\logs\\utility-logs";
 	
 	public static FileHandler utilityFileHandler;
 	
 	public static void createLog() throws SecurityException, IOException {
 		
-		File utilityDirectory = new File(".\\logs\\utility-logs");
+		File utilityDirectory = new File(path);
 		
 		if (!utilityDirectory.exists()) {
 			utilityDirectory.mkdirs();

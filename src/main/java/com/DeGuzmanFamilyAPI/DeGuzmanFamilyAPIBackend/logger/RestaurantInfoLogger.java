@@ -10,7 +10,7 @@ import javassist.bytecode.stackmap.TypeData.ClassName;
 
 public class RestaurantInfoLogger {
 
-	static boolean append = true;
+	public static boolean append = true;
 	
 	public final static Logger restaurantLogger = Logger.getLogger(ClassName.class.getTypeName());
 	

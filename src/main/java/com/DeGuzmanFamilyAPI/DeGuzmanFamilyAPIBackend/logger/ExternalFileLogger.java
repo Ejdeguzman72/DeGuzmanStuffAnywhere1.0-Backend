@@ -18,7 +18,7 @@ public class ExternalFileLogger {
 	public static String path = ".\\logs\\external-file-logs\\external-file.log";
 	
 	public static void createLog() throws SecurityException, IOException {
-		File logDirectory = new File(".\\logs\\external-file-logs");
+		File logDirectory = new File(path);
 		if (!logDirectory.exists()) {
 			logDirectory.mkdirs();
 			System.out.println("created directory " + logDirectory);

@@ -9,7 +9,7 @@ import javassist.bytecode.stackmap.TypeData.ClassName;
 
 public class AutoTrxLogger {
 
-	static boolean append = true;
+	public static boolean append = true;
 	
 	public final static Logger autoTrxLogger = Logger.getLogger(ClassName.class.getName());
 	
@@ -18,7 +18,7 @@ public class AutoTrxLogger {
 	public static FileHandler autoTrxHandler;
 	
 	public static void createLog() throws SecurityException, IOException {
-		File logDirectory = new File(".\\logs\\auto-transaction-logs");
+		File logDirectory = new File(path);
 		if(!logDirectory.exists()) {
 			logDirectory.mkdirs();
 			System.out.println("created directory" + " " + logDirectory);
@@ -26,6 +26,6 @@ public class AutoTrxLogger {
 		autoTrxHandler = new FileHandler(path, append);
 		autoTrxLogger.addHandler(autoTrxHandler);
 		
-		System.out.println("Created log directory" + " " + logDirectory);
+//		System.out.println("Created log directory" + " " + logDirectory);
 	}
 }

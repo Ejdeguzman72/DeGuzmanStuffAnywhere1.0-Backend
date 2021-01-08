@@ -16,11 +16,11 @@ public class GeneralTrxLogger {
 	
 	public final static String path = ".\\logs\\general-transaction-logs\\general-transaction.log";
 	
-	static FileHandler generalTrxFileHandler = null;
+	public static FileHandler generalTrxFileHandler = null;
 	
 	public static void createLog() throws SecurityException, IOException {
 		
-		File logDirectory = new File(".\\logs\\general-transaction-logs");
+		File logDirectory = new File(path);
 		
 		if(!logDirectory.exists()) {
 			

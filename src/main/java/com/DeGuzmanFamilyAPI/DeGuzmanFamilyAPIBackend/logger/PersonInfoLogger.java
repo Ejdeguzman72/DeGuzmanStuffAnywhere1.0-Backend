@@ -10,7 +10,7 @@ import javassist.bytecode.stackmap.TypeData.ClassName;
 
 public class PersonInfoLogger {
 
-	static boolean append = true;
+	public static boolean append = true;
 	
 	public final static Logger personInfoLogger = Logger.getLogger(ClassName.class.getName());
 	
@@ -19,15 +19,15 @@ public class PersonInfoLogger {
 	public static FileHandler personInfoFileHandler;
 	
 	public static void createLog() throws SecurityException, IOException {
-		personInfoLogger.setLevel(Level.SEVERE);
-		File logDirectory = new File(".\\logs\\person-info-logs");
+//		personInfoLogger.setLevel(Level.SEVERE);
+		File logDirectory = new File(path);
 		if(!logDirectory.exists()) {
 			logDirectory.mkdirs();
-			System.out.println("created directory" + " " + logDirectory);
+			System.out.println("Created Directory" + " " + logDirectory);
 		}
 		personInfoFileHandler = new FileHandler(path, append);
 		personInfoLogger.addHandler(personInfoFileHandler);
 		
-		System.out.println("Created Directory " + logDirectory);
+//		System.out.println("Created Directory " + logDirectory);
 	}
 }

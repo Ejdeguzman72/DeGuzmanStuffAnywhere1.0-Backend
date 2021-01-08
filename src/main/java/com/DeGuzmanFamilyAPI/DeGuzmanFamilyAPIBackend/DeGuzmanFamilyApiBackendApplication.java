@@ -4,6 +4,7 @@ import java.io.IOException;
 
 import javax.annotation.Resource;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -18,6 +19,7 @@ import com.DeGuzmanFamilyAPI.DeGuzmanFamilyAPIBackend.file_upload_service.PhotoF
 import com.DeGuzmanFamilyAPI.DeGuzmanFamilyAPIBackend.file_upload_service.VideoFilesStorageService;
 import com.DeGuzmanFamilyAPI.DeGuzmanFamilyAPIBackend.logger.AuthenticationLogger;
 import com.DeGuzmanFamilyAPI.DeGuzmanFamilyAPIBackend.logger.AutoTrxLogger;
+import com.DeGuzmanFamilyAPI.DeGuzmanFamilyAPIBackend.logger.BooksLogger;
 import com.DeGuzmanFamilyAPI.DeGuzmanFamilyAPIBackend.logger.CarInfoLogger;
 import com.DeGuzmanFamilyAPI.DeGuzmanFamilyAPIBackend.logger.ExternalFileLogger;
 import com.DeGuzmanFamilyAPI.DeGuzmanFamilyAPIBackend.logger.GeneralTrxLogger;
@@ -41,7 +43,7 @@ public class DeGuzmanFamilyApiBackendApplication implements CommandLineRunner {
 	@Resource
 	PhotoFilesStorageService photosFilesStorageService;
 	
-	@Resource
+	@Resource 
 	VideoFilesStorageService videosFilesStorageService;
 
 	public static void main(String[] args) throws SecurityException, IOException {
@@ -50,6 +52,8 @@ public class DeGuzmanFamilyApiBackendApplication implements CommandLineRunner {
 		
 		System.out.println("You are using port: " + port);
 		
+		
+		// creates the logs for the application 
 		AuthenticationLogger.createLog();
 		
 		AutoTrxLogger.createLog();
@@ -67,6 +71,8 @@ public class DeGuzmanFamilyApiBackendApplication implements CommandLineRunner {
 		RestaurantInfoLogger.createLog();
 		
 		UtilityInfoLogger.createLog();
+		
+		BooksLogger.createLog();
 		
 	}
 	

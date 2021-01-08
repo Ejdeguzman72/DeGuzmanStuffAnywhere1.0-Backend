@@ -9,18 +9,21 @@ import javassist.bytecode.stackmap.TypeData.ClassName;
 
 public class MasterLogger {
 
-	static boolean append = true;
+	public static boolean append = true;
+	
 	public final static Logger masterLogger = Logger.getLogger(ClassName.class.getName());
 	
+	public static FileHandler masterLoggerHandler;
+	
+	public static String path = ".\\log\\master\\master-logger.log";
+	
 	public void createLog() throws SecurityException, IOException  {
-		File masterLogDirectory = new File(".\\logs\\master");
+		File masterLogDirectory = new File(path);
 		if(!masterLogDirectory.exists()) {
 			masterLogDirectory.mkdirs();
 			System.out.println("Created directory" + " " + masterLogDirectory);  
 		}
 		
-		FileHandler masterLoggerHandler;
-		String path = ".\\log\\master\\master-logger.log";
 		masterLoggerHandler = new FileHandler(path,append);
 		masterLogger.addHandler(masterLoggerHandler);
 	}
