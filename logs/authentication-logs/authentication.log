@@ -275,3 +275,33 @@
   <thread>181</thread>
   <message>Created auto-transaction-uploads folder: auto-transaction-uploads</message>
 </record>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2021-01-09T23:37:08</date>
+  <millis>1610253428329</millis>
+  <sequence>7</sequence>
+  <logger>javassist.bytecode.stackmap.TypeData$ClassName</logger>
+  <level>INFO</level>
+  <class>com.DeGuzmanFamilyAPI.DeGuzmanFamilyAPIBackend.authentication_controller.JwtAuthenticationController</class>
+  <method>authenticate</method>
+  <thread>37</thread>
+  <message>User: global has logged in at Sat Jan 09 23:34:39 EST 2021</message>
+</record>
+<record>
+  <date>2021-01-09T23:37:08</date>
+  <millis>1610253428451</millis>
+  <sequence>8</sequence>
+  <logger>javassist.bytecode.stackmap.TypeData$ClassName</logger>
+  <level>INFO</level>
+  <class>com.DeGuzmanFamilyAPI.DeGuzmanFamilyAPIBackend.authentication_controller.JwtAuthenticationController</class>
+  <method>createAuthenticationToken</method>
+  <thread>37</thread>
+  <message>Authenticating User: Users [userid=1, username=global, password=$2a$10$vbgzGb5BV2rMB8Ub0NMVD.qJELLSlhZegEHZA.Stnkqv2buKmq5X2, name=null, email=null, user_status=2, roleid=1]</message>
+</record>
+</log>
