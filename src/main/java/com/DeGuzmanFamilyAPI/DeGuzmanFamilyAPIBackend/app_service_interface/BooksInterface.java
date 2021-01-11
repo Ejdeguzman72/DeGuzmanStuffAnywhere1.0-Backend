@@ -18,6 +18,8 @@ public interface BooksInterface {
 	
 	public ResponseEntity<Books> findBooksInformationById(@PathVariable int book_id) throws ResourceNotFoundException;
 	
+	public ResponseEntity<Books> findBookInformationByName(String name);
+	
 	public Books addBooksInformation(@Valid @RequestBody Books book);
 	
 	public ResponseEntity<Books> updateBooksInformation(@PathVariable int book_id,
@@ -25,5 +27,9 @@ public interface BooksInterface {
 	
 	public Map<Boolean,String> deleteBookInformation(@PathVariable int book_id);
 	
+	public Map<Boolean, String> deleteAllBookInformation();
+	
 	public long getBookCount();
+
+
 }

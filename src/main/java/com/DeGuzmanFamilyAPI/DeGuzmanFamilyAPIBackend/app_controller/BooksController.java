@@ -61,4 +61,9 @@ public class BooksController {
 		return booksService.deleteBookInformation(book_id);
 	}
 	
+	@DeleteMapping("/delete-all")
+	public Map<Boolean,String> deleteAllBookInformation() {
+		return booksService.deleteAllBookInformation();
+	}
+	
 }

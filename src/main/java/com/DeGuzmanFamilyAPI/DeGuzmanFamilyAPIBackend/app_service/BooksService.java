@@ -9,6 +9,7 @@ import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 
 import com.DeGuzmanFamilyAPI.DeGuzmanFamilyAPIBackend.app_models.Books;
@@ -35,7 +36,7 @@ public class BooksService implements BooksInterface {
 	}
 
 	@Override
-	public ResponseEntity<Books> findBooksInformationById(int book_id) throws ResourceNotFoundException {
+	public ResponseEntity<Books> findBooksInformationById(@PathVariable int book_id) throws ResourceNotFoundException {
 		
 		Books books = null;
 		
@@ -45,6 +46,21 @@ public class BooksService implements BooksInterface {
 			books = booksRepository.findById(book_id)
 					.orElseThrow(() -> new ResourceNotFoundException("Cannot find Book with ID Number: " + book_id));	
 			BooksLogger.booksLogger.info("Retrieved Book information for ID Number: " + book_id);
+		}
+		
+		return ResponseEntity.ok().body(books);
+	}
+	
+	@Override
+	public ResponseEntity<Books> findBookInformationByName(@PathVariable String name) {
+		
+		Books books = null;
+		
+		if (name == null || name == "") {
+			BooksLogger.booksLogger.warning("Name cannot be nulll");
+		} else {
+			books = booksRepository.findBookByName(name);
+			BooksLogger.booksLogger.info(name + " was found");
 		}
 		
 		return ResponseEntity.ok().body(books);
@@ -93,6 +109,23 @@ public class BooksService implements BooksInterface {
 			response = new HashMap<Boolean,String>();
 			response.put(Boolean.TRUE,"Deleted");
 		}
+		return response;
+	}
+	
+	@Override
+	public Map<Boolean,String> deleteAllBookInformation() {
+		
+		List<Books> list = booksRepository.findAll();
+		
+		Map<Boolean,String> response = new HashMap<>();
+		
+		booksRepository.deleteAll();
+		
+		if (list.size() == 0 || list.isEmpty()) {
+			response.put(Boolean.TRUE, "All Books Information has been deleted");
+			BooksLogger.booksLogger.info("All books have been deleted");
+		}
+		
 		return response;
 	}
 
