@@ -305,3 +305,361 @@
   <message>Authenticating User: Users [userid=1, username=global, password=$2a$10$vbgzGb5BV2rMB8Ub0NMVD.qJELLSlhZegEHZA.Stnkqv2buKmq5X2, name=null, email=null, user_status=2, roleid=1]</message>
 </record>
 </log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2021-01-09T23:50:28</date>
+  <millis>1610254228979</millis>
+  <sequence>7</sequence>
+  <logger>javassist.bytecode.stackmap.TypeData$ClassName</logger>
+  <level>WARNING</level>
+  <class>com.DeGuzmanFamilyAPI.DeGuzmanFamilyAPIBackend.app_service.BooksService</class>
+  <method>addBooksInformation</method>
+  <thread>38</thread>
+  <message>Name is null</message>
+</record>
+<record>
+  <date>2021-01-09T23:54:06</date>
+  <millis>1610254446879</millis>
+  <sequence>8</sequence>
+  <logger>javassist.bytecode.stackmap.TypeData$ClassName</logger>
+  <level>INFO</level>
+  <class>com.DeGuzmanFamilyAPI.DeGuzmanFamilyAPIBackend.app_service.BooksService</class>
+  <method>addBooksInformation</method>
+  <thread>42</thread>
+  <message>asljkdfasdf has been added!</message>
+</record>
+<record>
+  <date>2021-01-09T23:55:03</date>
+  <millis>1610254503247</millis>
+  <sequence>14</sequence>
+  <logger>javassist.bytecode.stackmap.TypeData$ClassName</logger>
+  <level>INFO</level>
+  <class>com.DeGuzmanFamilyAPI.DeGuzmanFamilyAPIBackend.file_upload_service.GeneralTransactionFilesStorageServiceImpl</class>
+  <method>init</method>
+  <thread>53</thread>
+  <message>: general-transaction-uploads</message>
+</record>
+<record>
+  <date>2021-01-09T23:55:03</date>
+  <millis>1610254503247</millis>
+  <sequence>15</sequence>
+  <logger>javassist.bytecode.stackmap.TypeData$ClassName</logger>
+  <level>INFO</level>
+  <class>com.DeGuzmanFamilyAPI.DeGuzmanFamilyAPIBackend.file_upload_service.MedicalTransactionFilesStorageServiceImpl</class>
+  <method>init</method>
+  <thread>53</thread>
+  <message>Created medical-transaction-uploads folder: medical-file-uploads</message>
+</record>
+<record>
+  <date>2021-01-09T23:55:03</date>
+  <millis>1610254503248</millis>
+  <sequence>16</sequence>
+  <logger>javassist.bytecode.stackmap.TypeData$ClassName</logger>
+  <level>INFO</level>
+  <class>com.DeGuzmanFamilyAPI.DeGuzmanFamilyAPIBackend.file_upload_service.AutoTransactionFilesStorageServiceImpl</class>
+  <method>init</method>
+  <thread>53</thread>
+  <message>Created auto-transaction-uploads folder: auto-transaction-uploads</message>
+</record>
+<record>
+  <date>2021-01-09T23:55:52</date>
+  <millis>1610254552045</millis>
+  <sequence>25</sequence>
+  <logger>javassist.bytecode.stackmap.TypeData$ClassName</logger>
+  <level>INFO</level>
+  <class>com.DeGuzmanFamilyAPI.DeGuzmanFamilyAPIBackend.file_upload_service.GeneralTransactionFilesStorageServiceImpl</class>
+  <method>init</method>
+  <thread>78</thread>
+  <message>: general-transaction-uploads</message>
+</record>
+<record>
+  <date>2021-01-09T23:55:52</date>
+  <millis>1610254552048</millis>
+  <sequence>26</sequence>
+  <logger>javassist.bytecode.stackmap.TypeData$ClassName</logger>
+  <level>INFO</level>
+  <class>com.DeGuzmanFamilyAPI.DeGuzmanFamilyAPIBackend.file_upload_service.MedicalTransactionFilesStorageServiceImpl</class>
+  <method>init</method>
+  <thread>78</thread>
+  <message>Created medical-transaction-uploads folder: medical-file-uploads</message>
+</record>
+<record>
+  <date>2021-01-09T23:55:52</date>
+  <millis>1610254552048</millis>
+  <sequence>27</sequence>
+  <logger>javassist.bytecode.stackmap.TypeData$ClassName</logger>
+  <level>INFO</level>
+  <class>com.DeGuzmanFamilyAPI.DeGuzmanFamilyAPIBackend.file_upload_service.AutoTransactionFilesStorageServiceImpl</class>
+  <method>init</method>
+  <thread>78</thread>
+  <message>Created auto-transaction-uploads folder: auto-transaction-uploads</message>
+</record>
+<record>
+  <date>2021-01-09T23:55:58</date>
+  <millis>1610254558798</millis>
+  <sequence>29</sequence>
+  <logger>javassist.bytecode.stackmap.TypeData$ClassName</logger>
+  <level>INFO</level>
+  <class>com.DeGuzmanFamilyAPI.DeGuzmanFamilyAPIBackend.app_service.BooksService</class>
+  <method>addBooksInformation</method>
+  <thread>102</thread>
+  <message>asljkdfasdf has been added!</message>
+</record>
+<record>
+  <date>2021-01-09T23:56:17</date>
+  <millis>1610254577420</millis>
+  <sequence>30</sequence>
+  <logger>javassist.bytecode.stackmap.TypeData$ClassName</logger>
+  <level>WARNING</level>
+  <class>com.DeGuzmanFamilyAPI.DeGuzmanFamilyAPIBackend.app_service.BooksService</class>
+  <method>addBooksInformation</method>
+  <thread>103</thread>
+  <message>Name is null</message>
+</record>
+<record>
+  <date>2021-01-09T23:57:26</date>
+  <millis>1610254646501</millis>
+  <sequence>31</sequence>
+  <logger>javassist.bytecode.stackmap.TypeData$ClassName</logger>
+  <level>WARNING</level>
+  <class>com.DeGuzmanFamilyAPI.DeGuzmanFamilyAPIBackend.app_service.BooksService</class>
+  <method>addBooksInformation</method>
+  <thread>106</thread>
+  <message>Name is null</message>
+</record>
+<record>
+  <date>2021-01-09T23:58:46</date>
+  <millis>1610254726169</millis>
+  <sequence>32</sequence>
+  <logger>javassist.bytecode.stackmap.TypeData$ClassName</logger>
+  <level>WARNING</level>
+  <class>com.DeGuzmanFamilyAPI.DeGuzmanFamilyAPIBackend.app_service.BooksService</class>
+  <method>addBooksInformation</method>
+  <thread>107</thread>
+  <message>Name is null</message>
+</record>
+<record>
+  <date>2021-01-10T00:12:35</date>
+  <millis>1610255555956</millis>
+  <sequence>33</sequence>
+  <logger>javassist.bytecode.stackmap.TypeData$ClassName</logger>
+  <level>WARNING</level>
+  <class>com.DeGuzmanFamilyAPI.DeGuzmanFamilyAPIBackend.app_service.BooksService</class>
+  <method>addBooksInformation</method>
+  <thread>110</thread>
+  <message>Name is null</message>
+</record>
+<record>
+  <date>2021-01-10T20:01:29</date>
+  <millis>1610326889101</millis>
+  <sequence>83</sequence>
+  <logger>javassist.bytecode.stackmap.TypeData$ClassName</logger>
+  <level>INFO</level>
+  <class>com.DeGuzmanFamilyAPI.DeGuzmanFamilyAPIBackend.file_upload_service.GeneralTransactionFilesStorageServiceImpl</class>
+  <method>init</method>
+  <thread>387</thread>
+  <message>: general-transaction-uploads</message>
+</record>
+<record>
+  <date>2021-01-10T20:01:29</date>
+  <millis>1610326889101</millis>
+  <sequence>84</sequence>
+  <logger>javassist.bytecode.stackmap.TypeData$ClassName</logger>
+  <level>INFO</level>
+  <class>com.DeGuzmanFamilyAPI.DeGuzmanFamilyAPIBackend.file_upload_service.MedicalTransactionFilesStorageServiceImpl</class>
+  <method>init</method>
+  <thread>387</thread>
+  <message>Created medical-transaction-uploads folder: medical-file-uploads</message>
+</record>
+<record>
+  <date>2021-01-10T20:01:29</date>
+  <millis>1610326889102</millis>
+  <sequence>85</sequence>
+  <logger>javassist.bytecode.stackmap.TypeData$ClassName</logger>
+  <level>INFO</level>
+  <class>com.DeGuzmanFamilyAPI.DeGuzmanFamilyAPIBackend.file_upload_service.AutoTransactionFilesStorageServiceImpl</class>
+  <method>init</method>
+  <thread>387</thread>
+  <message>Created auto-transaction-uploads folder: auto-transaction-uploads</message>
+</record>
+<record>
+  <date>2021-01-10T20:06:50</date>
+  <millis>1610327210780</millis>
+  <sequence>100</sequence>
+  <logger>javassist.bytecode.stackmap.TypeData$ClassName</logger>
+  <level>INFO</level>
+  <class>com.DeGuzmanFamilyAPI.DeGuzmanFamilyAPIBackend.file_upload_service.GeneralTransactionFilesStorageServiceImpl</class>
+  <method>init</method>
+  <thread>431</thread>
+  <message>: general-transaction-uploads</message>
+</record>
+<record>
+  <date>2021-01-10T20:06:50</date>
+  <millis>1610327210783</millis>
+  <sequence>101</sequence>
+  <logger>javassist.bytecode.stackmap.TypeData$ClassName</logger>
+  <level>INFO</level>
+  <class>com.DeGuzmanFamilyAPI.DeGuzmanFamilyAPIBackend.file_upload_service.MedicalTransactionFilesStorageServiceImpl</class>
+  <method>init</method>
+  <thread>431</thread>
+  <message>Created medical-transaction-uploads folder: medical-file-uploads</message>
+</record>
+<record>
+  <date>2021-01-10T20:06:50</date>
+  <millis>1610327210783</millis>
+  <sequence>102</sequence>
+  <logger>javassist.bytecode.stackmap.TypeData$ClassName</logger>
+  <level>INFO</level>
+  <class>com.DeGuzmanFamilyAPI.DeGuzmanFamilyAPIBackend.file_upload_service.AutoTransactionFilesStorageServiceImpl</class>
+  <method>init</method>
+  <thread>431</thread>
+  <message>Created auto-transaction-uploads folder: auto-transaction-uploads</message>
+</record>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2021-01-10T20:24:41</date>
+  <millis>1610328281117</millis>
+  <sequence>7</sequence>
+  <logger>javassist.bytecode.stackmap.TypeData$ClassName</logger>
+  <level>WARNING</level>
+  <class>com.DeGuzmanFamilyAPI.DeGuzmanFamilyAPIBackend.app_service.BooksService</class>
+  <method>addBooksInformation</method>
+  <thread>40</thread>
+  <message>Name is null</message>
+</record>
+<record>
+  <date>2021-01-10T20:40:44</date>
+  <millis>1610329244159</millis>
+  <sequence>8</sequence>
+  <logger>javassist.bytecode.stackmap.TypeData$ClassName</logger>
+  <level>WARNING</level>
+  <class>com.DeGuzmanFamilyAPI.DeGuzmanFamilyAPIBackend.app_service.BooksService</class>
+  <method>findAllBooksInformation</method>
+  <thread>42</thread>
+  <message>Books list is empty: 0</message>
+</record>
+<record>
+  <date>2021-01-10T20:40:59</date>
+  <millis>1610329259893</millis>
+  <sequence>9</sequence>
+  <logger>javassist.bytecode.stackmap.TypeData$ClassName</logger>
+  <level>INFO</level>
+  <class>com.DeGuzmanFamilyAPI.DeGuzmanFamilyAPIBackend.app_service.BooksService</class>
+  <method>addBooksInformation</method>
+  <thread>43</thread>
+  <message>The Messenger has been added!</message>
+</record>
+<record>
+  <date>2021-01-10T20:50:30</date>
+  <millis>1610329830267</millis>
+  <sequence>10</sequence>
+  <logger>javassist.bytecode.stackmap.TypeData$ClassName</logger>
+  <level>INFO</level>
+  <class>com.DeGuzmanFamilyAPI.DeGuzmanFamilyAPIBackend.app_service.BooksService</class>
+  <method>addBooksInformation</method>
+  <thread>44</thread>
+  <message>The Five People You Meet in Heaven has been added!</message>
+</record>
+<record>
+  <date>2021-01-10T20:57:58</date>
+  <millis>1610330278223</millis>
+  <sequence>20</sequence>
+  <logger>javassist.bytecode.stackmap.TypeData$ClassName</logger>
+  <level>INFO</level>
+  <class>com.DeGuzmanFamilyAPI.DeGuzmanFamilyAPIBackend.file_upload_service.GeneralTransactionFilesStorageServiceImpl</class>
+  <method>init</method>
+  <thread>65</thread>
+  <message>: general-transaction-uploads</message>
+</record>
+<record>
+  <date>2021-01-10T20:57:58</date>
+  <millis>1610330278224</millis>
+  <sequence>21</sequence>
+  <logger>javassist.bytecode.stackmap.TypeData$ClassName</logger>
+  <level>INFO</level>
+  <class>com.DeGuzmanFamilyAPI.DeGuzmanFamilyAPIBackend.file_upload_service.MedicalTransactionFilesStorageServiceImpl</class>
+  <method>init</method>
+  <thread>65</thread>
+  <message>Created medical-transaction-uploads folder: medical-file-uploads</message>
+</record>
+<record>
+  <date>2021-01-10T20:57:58</date>
+  <millis>1610330278224</millis>
+  <sequence>22</sequence>
+  <logger>javassist.bytecode.stackmap.TypeData$ClassName</logger>
+  <level>INFO</level>
+  <class>com.DeGuzmanFamilyAPI.DeGuzmanFamilyAPIBackend.file_upload_service.AutoTransactionFilesStorageServiceImpl</class>
+  <method>init</method>
+  <thread>65</thread>
+  <message>Created auto-transaction-uploads folder: auto-transaction-uploads</message>
+</record>
+<record>
+  <date>2021-01-10T21:00:14</date>
+  <millis>1610330414035</millis>
+  <sequence>34</sequence>
+  <logger>javassist.bytecode.stackmap.TypeData$ClassName</logger>
+  <level>INFO</level>
+  <class>com.DeGuzmanFamilyAPI.DeGuzmanFamilyAPIBackend.file_upload_service.GeneralTransactionFilesStorageServiceImpl</class>
+  <method>init</method>
+  <thread>91</thread>
+  <message>: general-transaction-uploads</message>
+</record>
+<record>
+  <date>2021-01-10T21:00:14</date>
+  <millis>1610330414036</millis>
+  <sequence>35</sequence>
+  <logger>javassist.bytecode.stackmap.TypeData$ClassName</logger>
+  <level>INFO</level>
+  <class>com.DeGuzmanFamilyAPI.DeGuzmanFamilyAPIBackend.file_upload_service.MedicalTransactionFilesStorageServiceImpl</class>
+  <method>init</method>
+  <thread>91</thread>
+  <message>Created medical-transaction-uploads folder: medical-file-uploads</message>
+</record>
+<record>
+  <date>2021-01-10T21:00:14</date>
+  <millis>1610330414036</millis>
+  <sequence>36</sequence>
+  <logger>javassist.bytecode.stackmap.TypeData$ClassName</logger>
+  <level>INFO</level>
+  <class>com.DeGuzmanFamilyAPI.DeGuzmanFamilyAPIBackend.file_upload_service.AutoTransactionFilesStorageServiceImpl</class>
+  <method>init</method>
+  <thread>91</thread>
+  <message>Created auto-transaction-uploads folder: auto-transaction-uploads</message>
+</record>
+<record>
+  <date>2021-01-10T21:00:20</date>
+  <millis>1610330420800</millis>
+  <sequence>38</sequence>
+  <logger>javassist.bytecode.stackmap.TypeData$ClassName</logger>
+  <level>INFO</level>
+  <class>com.DeGuzmanFamilyAPI.DeGuzmanFamilyAPIBackend.app_service.BooksService</class>
+  <method>findBookInformationByName</method>
+  <thread>114</thread>
+  <message>The Messenger was found</message>
+</record>
+<record>
+  <date>2021-01-10T21:31:15</date>
+  <millis>1610332275578</millis>
+  <sequence>39</sequence>
+  <logger>javassist.bytecode.stackmap.TypeData$ClassName</logger>
+  <level>INFO</level>
+  <class>com.DeGuzmanFamilyAPI.DeGuzmanFamilyAPIBackend.app_service.BooksService</class>
+  <method>addBooksInformation</method>
+  <thread>119</thread>
+  <message>The Glass Hotel has been added!</message>
+</record>
+<record>
+  <date>2021-01-10T21:31:30</date>
+  <millis>1610332290022</millis>
+  <sequence>40</sequence>
+  <logger>javassist.bytecode.stackmap.TypeData$ClassName</logger>
+  <level>INFO</level>
+  <class>com.DeGuzmanFamilyAPI.DeGuzmanFamilyAPIBackend.app_service.BooksService</class>
+  <method>addBooksInformation</method>
+  <thread>120</thread>
+  <message>The Vanishing Half has been added!</message>
+</record>

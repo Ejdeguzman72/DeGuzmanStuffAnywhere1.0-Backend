@@ -9,6 +9,6 @@ import com.DeGuzmanFamilyAPI.DeGuzmanFamilyAPIBackend.app_models.Books;
 @Repository
 public interface BooksRepository extends JpaRepository<Books,Integer> {
 
-	@Query(value = "SELECT * FROM books WHERE name = ?")
+	@Query(value = "SELECT * FROM book WHERE name = ?1", nativeQuery=true)
 	Books findBookByName(String name);
 }

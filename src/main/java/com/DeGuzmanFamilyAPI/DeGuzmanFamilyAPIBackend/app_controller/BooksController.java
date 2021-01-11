@@ -45,6 +45,11 @@ public class BooksController {
 		return booksService.getBookCount();
 	}
 	
+	@GetMapping("/find-book-by-name/{name}")
+	public ResponseEntity<Books> findBookInformationById(@PathVariable String name) {
+		return booksService.findBookInformationByName(name);
+	}
+	
 	@PostMapping("/add-book-information")
 	public Books addBookInformation(@Valid @RequestBody Books book) {
 		return booksService.addBooksInformation(book);
