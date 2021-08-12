@@ -1,5 +1,6 @@
 package com.DeGuzmanFamilyAPI.DeGuzmanFamilyAPIBackend.app_models;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EntityListeners;
 import javax.persistence.GeneratedValue;
@@ -17,20 +18,23 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 public class TransactionType {
 	
 	public long transactionTypeId;
-	public String descr;
+	public String transaction_type_descr;
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "transaction_type_id")
 	public long getTransactionTypeId() {
 		return transactionTypeId;
 	}
 	public void setTransactionTypeId(long transactionTypeId) {
 		this.transactionTypeId = transactionTypeId;
 	}
+	
+	@Column(name = "transaction_type_descr")
 	public String getDescr() {
-		return descr;
+		return transaction_type_descr;
 	}
-	public void setDescr(String descr) {
-		this.descr = descr;
+	public void setDescr(String transaction_type_descr) {
+		this.transaction_type_descr = transaction_type_descr;
 	}
 }

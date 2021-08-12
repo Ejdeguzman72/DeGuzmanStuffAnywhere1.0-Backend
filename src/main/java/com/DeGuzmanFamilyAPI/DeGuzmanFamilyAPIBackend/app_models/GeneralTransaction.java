@@ -1,5 +1,6 @@
 package com.DeGuzmanFamilyAPI.DeGuzmanFamilyAPIBackend.app_models;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EntityListeners;
 import javax.persistence.GeneratedValue;
@@ -18,6 +19,7 @@ public class GeneralTransaction {
 
 	private long transactionId;
 	private double amount;
+	private String transactionType;
 	private String paymentDate;
 	private String entity;
 	private String person;
@@ -25,30 +27,47 @@ public class GeneralTransaction {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "transaction_id")
 	public long getTransactionId() {
 		return transactionId;
 	}
 	public void setTransactionId(long transactionId) {
 		this.transactionId = transactionId;
 	}
+	
+	@Column(name = "amount")
 	public double getAmount() {
 		return amount;
 	}
 	public void setAmount(double amount) {
 		this.amount = amount;
 	}
+	
+	@Column(name = "transaction_type")
+	public String getTransactionType() {
+		return transactionType;
+	}
+	public void setTransactionType(String transactionType) {
+		this.transactionType = transactionType;
+	}
+	
+	@Column(name = "payment_date")
 	public String getPaymentDate() {
 		return paymentDate;
 	}
 	public void setPaymentDate(String paymentDate) {
 		this.paymentDate = paymentDate;
 	}
+	
+	@Column(name = "entity")
 	public String getEntity() {
 		return entity;
 	}
 	public void setEntity(String entity) {
 		this.entity = entity;
 	}
+	
+	@Column(name = "person")
 	public String getPerson() {
 		return person;
 	}

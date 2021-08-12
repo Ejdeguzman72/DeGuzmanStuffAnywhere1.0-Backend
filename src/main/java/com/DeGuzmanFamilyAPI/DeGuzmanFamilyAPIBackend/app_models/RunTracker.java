@@ -2,6 +2,7 @@ package com.DeGuzmanFamilyAPI.DeGuzmanFamilyAPIBackend.app_models;
 
 import java.util.Date;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -18,42 +19,71 @@ public class RunTracker {
 	public long runid;
 	public String firstname;
 	public String lastname;
-	public Date runDate;
+	public String city;
+	public String state;
+	public String runDate;
 	public double runDistance;
 	public String runTime;
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "run_id")
 	public long getRunid() {
 		return runid;
 	}
 	public void setRunid(long runid) {
 		this.runid = runid;
 	}
+	
+	@Column(name = "firstname")
 	public String getFirstname() {
 		return firstname;
 	}
 	public void setFirstname(String firstname) {
 		this.firstname = firstname;
 	}
+	
+	@Column(name = "lastname")
 	public String getLastname() {
 		return lastname;
 	}
 	public void setLastname(String lastname) {
 		this.lastname = lastname;
 	}
-	public Date getRunDate() {
+	
+	@Column(name = "city")
+	public String getCity() {
+		return city;
+	}
+	public void setCity(String city) {
+		this.city = city;
+	}
+	
+	@Column(name = "state")
+	public String getState() {
+		return state;
+	}
+	public void setState(String state) {
+		this.state = state;
+	}
+	
+	@Column(name = "run_date")
+	public String getRunDate() {
 		return runDate;
 	}
-	public void setRunDate(Date runDate) {
+	public void setRunDate(String runDate) {
 		this.runDate = runDate;
 	}
+	
+	@Column(name = "run_distance")
 	public double getRunDistance() {
 		return runDistance;
 	}
 	public void setRunDistance(double runDistance) {
 		this.runDistance = runDistance;
 	}
+	
+	@Column(name = "run_time")
 	public String getRunTime() {
 		return runTime;
 	}

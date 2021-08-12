@@ -1,5 +1,6 @@
 package com.DeGuzmanFamilyAPI.DeGuzmanFamilyAPIBackend.app_models;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -16,35 +17,53 @@ public class Car {
 	public long carid;
 	public String make;
 	public String model;
-	public int capactity;
+	public String year;
+	public int capacity;
 	public String transmission;
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "car_id")
 	public long getCarid() {
 		return carid;
 	}
 	public void setCarid(long carid) {
 		this.carid = carid;
 	}
+	
+	@Column(name = "make")
 	public String getMake() {
 		return make;
 	}
 	public void setMake(String make) {
 		this.make = make;
 	}
+	
+	@Column(name = "model")
 	public String getModel() {
 		return model;
 	}
 	public void setModel(String model) {
 		this.model = model;
 	}
+	
+	@Column(name = "year")
+	public String getYear() {
+		return year;
+	}
+	public void setYear(String year) {
+		this.year = year;
+	}
+	
+	@Column(name = "capacity")
 	public int getCapactity() {
-		return capactity;
+		return capacity;
 	}
 	public void setCapactity(int capactity) {
-		this.capactity = capactity;
+		this.capacity = capactity;
 	}
+	
+	@Column(name = "transmission")
 	public String getTransmission() {
 		return transmission;
 	}
@@ -55,7 +74,7 @@ public class Car {
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + capactity;
+		result = prime * result + capacity;
 		result = prime * result + (int) (carid ^ (carid >>> 32));
 		result = prime * result + ((make == null) ? 0 : make.hashCode());
 		result = prime * result + ((model == null) ? 0 : model.hashCode());
@@ -71,7 +90,7 @@ public class Car {
 		if (getClass() != obj.getClass())
 			return false;
 		Car other = (Car) obj;
-		if (capactity != other.capactity)
+		if (capacity != other.capacity)
 			return false;
 		if (carid != other.carid)
 			return false;
@@ -94,15 +113,15 @@ public class Car {
 	}
 	@Override
 	public String toString() {
-		return "Car [carid=" + carid + ", make=" + make + ", model=" + model + ", capactity=" + capactity
+		return "Car [carid=" + carid + ", make=" + make + ", model=" + model + ", capacity=" + capacity
 				+ ", transmission=" + transmission + "]";
 	}
-	public Car(long carid, String make, String model, int capactity, String transmission) {
+	public Car(long carid, String make, String model, int capacity, String transmission) {
 		super();
 		this.carid = carid;
 		this.make = make;
 		this.model = model;
-		this.capactity = capactity;
+		this.capacity = capacity;
 		this.transmission = transmission;
 	}
 	

@@ -52,7 +52,7 @@ public class CarService implements CarInterface {
 	}
 	
 	public Car addCarInformation(@Valid @RequestBody Car car) {
-		if (car.capactity == 0) {
+		if (car.capacity == 0) {
 			CarInfoLogger.carInfoLogger.warning("Car capacity is empty");
 		} else if (car.make == "" || car.model == null) {
 			CarInfoLogger.carInfoLogger.warning("Car make is empty");

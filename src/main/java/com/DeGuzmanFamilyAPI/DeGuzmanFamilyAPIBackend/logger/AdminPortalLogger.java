@@ -13,7 +13,7 @@ public class AdminPortalLogger {
 	
 	public final static Logger adminPortalLogger = Logger.getLogger(ClassName.class.getName());
 	
-	public final static String path = ".\\logs\\admin-portal-logs\\admin-portal.log";
+	public final static String path = ".\\logs\\admin-portal-logs\\admin-portal.txt";
 	
 	public static FileHandler adminPortalFileHandler;
 	

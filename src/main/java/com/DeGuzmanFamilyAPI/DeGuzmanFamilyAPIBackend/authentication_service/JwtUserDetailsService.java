@@ -54,12 +54,14 @@ public class JwtUserDetailsService implements UserDetailsService {
 		List<Users> userList = userRepository.findAll();
 		newUser.setUsername(user.getUsername());
 		newUser.setPassword(bcryptEncoder.encode(user.getPassword()));
-		newUser.setRoleid(RoleValues.DEGUZMANSTUFFANYWHERE_BASIC_USER);
-		newUser.setUser_status(UserStatusValues.DEGUZMANSTUFFANYWHERE_PENDING);
+		newUser.setName(user.getName());
+		newUser.setEmail(user.getEmail());
+		newUser.setRole_id(RoleValues.DEGUZMANSTUFFANYWHERE_BASIC_USER);
+		newUser.setUser_status_id(UserStatusValues.DEGUZMANSTUFFANYWHERE_PENDING);
 		if (newUser.username == null
 				|| newUser.password == null
-				|| newUser.roleid == 0
-				|| newUser.user_status == 0) {
+				|| newUser.role_id == 0
+				|| newUser.user_status_id == 0) {
 			AuthenticationLogger.authenticationLogger.warning("User is null/incorrect entries");
 		} else {
 			AuthenticationLogger.authenticationLogger.info("User has been saved: " + newUser.username);

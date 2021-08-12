@@ -26,7 +26,7 @@ public class RunTrackerService implements RunTrackerServiceInterface {
 	
 	public List<RunTracker> findAllRunTrackerInformation() {
 		
-		List<RunTracker> list = findAllRunTrackerInformation();
+		List<RunTracker> list = runTrackerRepository.findAll();
 		
 		if (list.size() == 0 || list.isEmpty()) {
 			RunTrackerLogger.runTrackerLogger.warning("Run Tracker List is Empty: " + list);

@@ -1,5 +1,6 @@
 package com.DeGuzmanFamilyAPI.DeGuzmanFamilyAPIBackend.app_models;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -20,18 +21,23 @@ public class Books {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "book_id")
 	public int getBook_id() {
 		return book_id;
 	}
 	public void setBook_id(int book_id) {
 		this.book_id = book_id;
 	}
+	
+	@Column(name = "name")
 	public String getName() {
 		return name;
 	}
 	public void setName(String name) {
 		this.name = name;
 	}
+	
+	@Column(name = "author")
 	public String getAuthor() {
 		return author;
 	}
@@ -39,6 +45,14 @@ public class Books {
 		this.author = author;
 	}
 	
+	
+	@Column(name = "descr")
+	public String getDescr() {
+		return descr;
+	}
+	public void setDescr(String descr) {
+		this.descr = descr;
+	}
 	@Override
 	public int hashCode() {
 		final int prime = 31;

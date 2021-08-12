@@ -50,7 +50,7 @@ public class CarController {
 		return carService.updateCarInformation(carid, carDetails);
 	}
 	
-	@DeleteMapping("/delete-car-information")
+	@DeleteMapping("/delete-car-information/{carid}")
 	public Map<String,Boolean> deleteCarInformation(@PathVariable long carid) {
 		return carService.deleteCarInformation(carid);
 	}

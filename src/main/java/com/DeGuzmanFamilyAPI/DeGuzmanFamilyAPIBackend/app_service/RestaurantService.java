@@ -54,9 +54,11 @@ public class RestaurantService implements RestaurantInterface {
 			RestaurantInfoLogger.restaurantLogger.warn("Restaurant name is null");
 		} else if (restaurant.state == "" || restaurant.state == null) {
 			RestaurantInfoLogger.restaurantLogger.warn("Restaruant state is null");
-		} else if (restaurant.type == "" || restaurant.type == null) {
-			RestaurantInfoLogger.restaurantLogger.warn("Restaurant type is null");
-		} else if (restaurant.zip == "" || restaurant.zip == null) {
+		} 
+//		else if (restaurant.type == "" || restaurant.type == null) {
+//			RestaurantInfoLogger.restaurantLogger.warn("Restaurant type is null");
+//		} 
+		else if (restaurant.zip == "" || restaurant.zip == null) {
 			RestaurantInfoLogger.restaurantLogger.warn("Restaurant zip is null");
 		} else {
 			RestaurantInfoLogger.restaurantLogger.info("Restaurant Info has been added: " + restaurant.name);
@@ -75,7 +77,7 @@ public class RestaurantService implements RestaurantInterface {
 			restaurant.setName(restaurantDetails.getName());
 			restaurant.setState(restaurantDetails.getState());
 			restaurant.setZip(restaurantDetails.getZip());
-			restaurant.setType(restaurantDetails.getType());
+			//restaurant.setType(restaurantDetails.getType());
 		}
 		
 		catch (Exception e) {

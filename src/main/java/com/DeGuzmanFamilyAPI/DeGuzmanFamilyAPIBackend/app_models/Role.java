@@ -1,5 +1,6 @@
 package com.DeGuzmanFamilyAPI.DeGuzmanFamilyAPIBackend.app_models;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -18,12 +19,15 @@ public class Role {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "role_id")
 	public Long getRoleid() {
 		return roleid;
 	}
 	public void setRoleid(Long roleid) {
 		this.roleid = roleid;
 	}
+	
+	@Column(name = "descr")
 	public String getDescr() {
 		return descr;
 	}

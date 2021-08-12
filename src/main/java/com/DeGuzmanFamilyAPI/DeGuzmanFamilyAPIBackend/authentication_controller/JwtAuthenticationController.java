@@ -56,12 +56,12 @@ public class JwtAuthenticationController {
 		
 		String token = "";
 		
-		if (user.user_status == UserStatusValues.DEGUZMANSTUFFANYWHERE_ACCEPTED) {
+		if (user.user_status_id == UserStatusValues.DEGUZMANSTUFFANYWHERE_ACCEPTED) {
 			
 			token = jwtTokenUtil.generateToken(userDetails);
 			AuthenticationLogger.authenticationLogger.info("Authenticating User: " + user);
 	
-		} else if (user.user_status == UserStatusValues.DEGUZMANSTUFFANYWHERE_PENDING) {
+		} else if (user.user_status_id == UserStatusValues.DEGUZMANSTUFFANYWHERE_PENDING) {
 		
 			token = "";
 			if (token == "")  {

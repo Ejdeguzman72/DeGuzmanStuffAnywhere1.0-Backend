@@ -1,5 +1,6 @@
 package com.DeGuzmanFamilyAPI.DeGuzmanFamilyAPIBackend.app_models;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -18,12 +19,15 @@ public class Recipe {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "recipe_id")
 	public int getRecipeId() {
 		return recipeId;
 	}
 	public void setRecipeId(int recipeId) {
 		this.recipeId = recipeId;
 	}
+	
+	@Column(name = "name")
 	public String getName() {
 		return name;
 	}

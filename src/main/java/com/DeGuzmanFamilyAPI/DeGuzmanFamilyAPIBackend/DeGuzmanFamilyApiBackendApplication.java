@@ -4,7 +4,6 @@ import java.io.IOException;
 
 import javax.annotation.Resource;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -24,6 +23,7 @@ import com.DeGuzmanFamilyAPI.DeGuzmanFamilyAPIBackend.logger.CarInfoLogger;
 import com.DeGuzmanFamilyAPI.DeGuzmanFamilyAPIBackend.logger.ExternalFileLogger;
 import com.DeGuzmanFamilyAPI.DeGuzmanFamilyAPIBackend.logger.GeneralTrxLogger;
 import com.DeGuzmanFamilyAPI.DeGuzmanFamilyAPIBackend.logger.MedicalTrxLogger;
+import com.DeGuzmanFamilyAPI.DeGuzmanFamilyAPIBackend.logger.MusicLogger;
 import com.DeGuzmanFamilyAPI.DeGuzmanFamilyAPIBackend.logger.PersonInfoLogger;
 import com.DeGuzmanFamilyAPI.DeGuzmanFamilyAPIBackend.logger.RestaurantInfoLogger;
 import com.DeGuzmanFamilyAPI.DeGuzmanFamilyAPIBackend.logger.UtilityInfoLogger;
@@ -65,6 +65,8 @@ public class DeGuzmanFamilyApiBackendApplication implements CommandLineRunner {
 		GeneralTrxLogger.createLog();
 		
 		MedicalTrxLogger.createLog();
+		
+		MusicLogger.createLog();
 		
 		PersonInfoLogger.createLog();
 		

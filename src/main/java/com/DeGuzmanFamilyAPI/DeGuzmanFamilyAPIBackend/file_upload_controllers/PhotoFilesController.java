@@ -50,9 +50,13 @@ public class PhotoFilesController {
 			String filename = path.getFileName().toString();
 			String url = MvcUriComponentsBuilder
 					.fromMethodName(PhotoFilesController.class, "getPhotoFile",path.getFileName().toString()).build().toString();
-			
+			//System.out.println(url);			
 			return new PhotosFileInfo(filename,url);
 		}).collect(Collectors.toList());
+		
+		for (int i = 0; i < photoFileInfos.size(); i++) {
+			System.out.println(photoFileInfos.get(i));
+		}
 		
 		return ResponseEntity.status(HttpStatus.OK).body(photoFileInfos);
 	}

@@ -1,7 +1,7 @@
 package com.DeGuzmanFamilyAPI.DeGuzmanFamilyAPIBackend.app_models;
 
-import java.util.Date;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -19,34 +19,52 @@ public class MedicalTransaction {
 	public String facillity;
 	public String medicalTransactionDate;
 	public double amount;
+	public String transactionType;
 	public String person;
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "medical_transaction_id")
 	public Long getMedicalTransactionId() {
 		return medicalTransactionId;
 	}
 	public void setMedicalTransactionId(Long medicalTransactionId) {
 		this.medicalTransactionId = medicalTransactionId;
 	}
+	
+	@Column(name = "facility")
 	public String getFacillity() {
 		return facillity;
 	}
 	public void setFacillity(String facillity) {
 		this.facillity = facillity;
 	}
+	
+	@Column(name = "medical_transaction_date")
 	public String getMedicalTransactionDate() {
 		return medicalTransactionDate;
 	}
 	public void setMedicalTransactionDate(String medicalTransactionDate) {
 		this.medicalTransactionDate = medicalTransactionDate;
 	}
+	
+	@Column(name = "amount")
 	public double getAmount() {
 		return amount;
 	}
 	public void setAmount(double amount) {
 		this.amount = amount;
 	}
+	
+	@Column(name = "transaction_type")
+	public String getTransactionType() {
+		return transactionType;
+	}
+	public void setTransactionType(String transactionType) {
+		this.transactionType = transactionType;
+	}
+	
+	@Column(name = "person")
 	public String getPerson() {
 		return person;
 	}

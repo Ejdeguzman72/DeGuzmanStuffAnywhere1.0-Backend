@@ -1,0 +1,1 @@
+insert into utility_type (utility_type_descr) values ('Rent'), ('Gas'), ('Electric'), ('Cable'), ('Internet'), ('Phones'), ('Insurance'), ('Mortgage');
